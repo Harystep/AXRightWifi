@@ -1,0 +1,665 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BFD82806B5A0B62C992F1AE /* libPods-AXRightWifi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB66007756FA78C6C649CA1B /* libPods-AXRightWifi.a */; };
+		4C9B6E2E29E8210D0007BDB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E2D29E8210D0007BDB5 /* AppDelegate.m */; };
+		4C9B6E3429E8210D0007BDB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E3329E8210D0007BDB5 /* ViewController.m */; };
+		4C9B6E3729E8210D0007BDB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B6E3529E8210D0007BDB5 /* Main.storyboard */; };
+		4C9B6E3929E821110007BDB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B6E3829E821110007BDB5 /* Assets.xcassets */; };
+		4C9B6E3C29E821110007BDB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B6E3A29E821110007BDB5 /* LaunchScreen.storyboard */; };
+		4C9B6E3F29E821110007BDB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E3E29E821110007BDB5 /* main.m */; };
+		4C9B6E4929E821110007BDB5 /* AXRightWifiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E4829E821110007BDB5 /* AXRightWifiTests.m */; };
+		4C9B6E5329E821110007BDB5 /* AXRightWifiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E5229E821110007BDB5 /* AXRightWifiUITests.m */; };
+		4C9B6E5529E821110007BDB5 /* AXRightWifiUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E5429E821110007BDB5 /* AXRightWifiUITestsLaunchTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C9B6E4529E821110007BDB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C9B6E2129E8210D0007BDB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C9B6E2829E8210D0007BDB5;
+			remoteInfo = AXRightWifi;
+		};
+		4C9B6E4F29E821110007BDB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C9B6E2129E8210D0007BDB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C9B6E2829E8210D0007BDB5;
+			remoteInfo = AXRightWifi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C9B6E2929E8210D0007BDB5 /* AXRightWifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXRightWifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C9B6E2C29E8210D0007BDB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C9B6E2D29E8210D0007BDB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C9B6E3229E8210D0007BDB5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4C9B6E3329E8210D0007BDB5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4C9B6E3629E8210D0007BDB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C9B6E3829E821110007BDB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C9B6E3B29E821110007BDB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C9B6E3D29E821110007BDB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C9B6E3E29E821110007BDB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C9B6E4429E821110007BDB5 /* AXRightWifiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AXRightWifiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C9B6E4829E821110007BDB5 /* AXRightWifiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRightWifiTests.m; sourceTree = "<group>"; };
+		4C9B6E4E29E821110007BDB5 /* AXRightWifiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AXRightWifiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C9B6E5229E821110007BDB5 /* AXRightWifiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRightWifiUITests.m; sourceTree = "<group>"; };
+		4C9B6E5429E821110007BDB5 /* AXRightWifiUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRightWifiUITestsLaunchTests.m; sourceTree = "<group>"; };
+		CB66007756FA78C6C649CA1B /* libPods-AXRightWifi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AXRightWifi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFB08F30AE467AAA673BCDE0 /* Pods-AXRightWifi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXRightWifi.debug.xcconfig"; path = "Target Support Files/Pods-AXRightWifi/Pods-AXRightWifi.debug.xcconfig"; sourceTree = "<group>"; };
+		E6379435791576BB2F2CC89B /* Pods-AXRightWifi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXRightWifi.release.xcconfig"; path = "Target Support Files/Pods-AXRightWifi/Pods-AXRightWifi.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C9B6E2629E8210D0007BDB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFD82806B5A0B62C992F1AE /* libPods-AXRightWifi.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9B6E4129E821110007BDB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9B6E4B29E821110007BDB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C9B6E2029E8210D0007BDB5 = {
+			isa = PBXGroup;
+			children = (
+				4C9B6E2B29E8210D0007BDB5 /* AXRightWifi */,
+				4C9B6E4729E821110007BDB5 /* AXRightWifiTests */,
+				4C9B6E5129E821110007BDB5 /* AXRightWifiUITests */,
+				4C9B6E2A29E8210D0007BDB5 /* Products */,
+				BDE6E2C3B91A9E6FDFB8320A /* Pods */,
+				68D1615FF6FD26A47491C974 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4C9B6E2A29E8210D0007BDB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C9B6E2929E8210D0007BDB5 /* AXRightWifi.app */,
+				4C9B6E4429E821110007BDB5 /* AXRightWifiTests.xctest */,
+				4C9B6E4E29E821110007BDB5 /* AXRightWifiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C9B6E2B29E8210D0007BDB5 /* AXRightWifi */ = {
+			isa = PBXGroup;
+			children = (
+				4C9B6E2C29E8210D0007BDB5 /* AppDelegate.h */,
+				4C9B6E2D29E8210D0007BDB5 /* AppDelegate.m */,
+				4C9B6E3229E8210D0007BDB5 /* ViewController.h */,
+				4C9B6E3329E8210D0007BDB5 /* ViewController.m */,
+				4C9B6E3529E8210D0007BDB5 /* Main.storyboard */,
+				4C9B6E3829E821110007BDB5 /* Assets.xcassets */,
+				4C9B6E3A29E821110007BDB5 /* LaunchScreen.storyboard */,
+				4C9B6E3D29E821110007BDB5 /* Info.plist */,
+				4C9B6E3E29E821110007BDB5 /* main.m */,
+			);
+			path = AXRightWifi;
+			sourceTree = "<group>";
+		};
+		4C9B6E4729E821110007BDB5 /* AXRightWifiTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C9B6E4829E821110007BDB5 /* AXRightWifiTests.m */,
+			);
+			path = AXRightWifiTests;
+			sourceTree = "<group>";
+		};
+		4C9B6E5129E821110007BDB5 /* AXRightWifiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4C9B6E5229E821110007BDB5 /* AXRightWifiUITests.m */,
+				4C9B6E5429E821110007BDB5 /* AXRightWifiUITestsLaunchTests.m */,
+			);
+			path = AXRightWifiUITests;
+			sourceTree = "<group>";
+		};
+		68D1615FF6FD26A47491C974 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB66007756FA78C6C649CA1B /* libPods-AXRightWifi.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDE6E2C3B91A9E6FDFB8320A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFB08F30AE467AAA673BCDE0 /* Pods-AXRightWifi.debug.xcconfig */,
+				E6379435791576BB2F2CC89B /* Pods-AXRightWifi.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C9B6E2829E8210D0007BDB5 /* AXRightWifi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C9B6E5829E821110007BDB5 /* Build configuration list for PBXNativeTarget "AXRightWifi" */;
+			buildPhases = (
+				FA0625E52A8F5105BEEFE0CF /* [CP] Check Pods Manifest.lock */,
+				4C9B6E2529E8210D0007BDB5 /* Sources */,
+				4C9B6E2629E8210D0007BDB5 /* Frameworks */,
+				4C9B6E2729E8210D0007BDB5 /* Resources */,
+				4294B3CA689E662271C12EE2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AXRightWifi;
+			productName = AXRightWifi;
+			productReference = 4C9B6E2929E8210D0007BDB5 /* AXRightWifi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C9B6E4329E821110007BDB5 /* AXRightWifiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C9B6E5B29E821110007BDB5 /* Build configuration list for PBXNativeTarget "AXRightWifiTests" */;
+			buildPhases = (
+				4C9B6E4029E821110007BDB5 /* Sources */,
+				4C9B6E4129E821110007BDB5 /* Frameworks */,
+				4C9B6E4229E821110007BDB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C9B6E4629E821110007BDB5 /* PBXTargetDependency */,
+			);
+			name = AXRightWifiTests;
+			productName = AXRightWifiTests;
+			productReference = 4C9B6E4429E821110007BDB5 /* AXRightWifiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4C9B6E4D29E821110007BDB5 /* AXRightWifiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C9B6E5E29E821110007BDB5 /* Build configuration list for PBXNativeTarget "AXRightWifiUITests" */;
+			buildPhases = (
+				4C9B6E4A29E821110007BDB5 /* Sources */,
+				4C9B6E4B29E821110007BDB5 /* Frameworks */,
+				4C9B6E4C29E821110007BDB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C9B6E5029E821110007BDB5 /* PBXTargetDependency */,
+			);
+			name = AXRightWifiUITests;
+			productName = AXRightWifiUITests;
+			productReference = 4C9B6E4E29E821110007BDB5 /* AXRightWifiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C9B6E2129E8210D0007BDB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					4C9B6E2829E8210D0007BDB5 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					4C9B6E4329E821110007BDB5 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 4C9B6E2829E8210D0007BDB5;
+					};
+					4C9B6E4D29E821110007BDB5 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 4C9B6E2829E8210D0007BDB5;
+					};
+				};
+			};
+			buildConfigurationList = 4C9B6E2429E8210D0007BDB5 /* Build configuration list for PBXProject "AXRightWifi" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C9B6E2029E8210D0007BDB5;
+			productRefGroup = 4C9B6E2A29E8210D0007BDB5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C9B6E2829E8210D0007BDB5 /* AXRightWifi */,
+				4C9B6E4329E821110007BDB5 /* AXRightWifiTests */,
+				4C9B6E4D29E821110007BDB5 /* AXRightWifiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C9B6E2729E8210D0007BDB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C9B6E3C29E821110007BDB5 /* LaunchScreen.storyboard in Resources */,
+				4C9B6E3929E821110007BDB5 /* Assets.xcassets in Resources */,
+				4C9B6E3729E8210D0007BDB5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9B6E4229E821110007BDB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9B6E4C29E821110007BDB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4294B3CA689E662271C12EE2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AXRightWifi/Pods-AXRightWifi-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AXRightWifi/Pods-AXRightWifi-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AXRightWifi/Pods-AXRightWifi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA0625E52A8F5105BEEFE0CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AXRightWifi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C9B6E2529E8210D0007BDB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C9B6E3429E8210D0007BDB5 /* ViewController.m in Sources */,
+				4C9B6E2E29E8210D0007BDB5 /* AppDelegate.m in Sources */,
+				4C9B6E3F29E821110007BDB5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9B6E4029E821110007BDB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C9B6E4929E821110007BDB5 /* AXRightWifiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9B6E4A29E821110007BDB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C9B6E5329E821110007BDB5 /* AXRightWifiUITests.m in Sources */,
+				4C9B6E5529E821110007BDB5 /* AXRightWifiUITestsLaunchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C9B6E4629E821110007BDB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C9B6E2829E8210D0007BDB5 /* AXRightWifi */;
+			targetProxy = 4C9B6E4529E821110007BDB5 /* PBXContainerItemProxy */;
+		};
+		4C9B6E5029E821110007BDB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C9B6E2829E8210D0007BDB5 /* AXRightWifi */;
+			targetProxy = 4C9B6E4F29E821110007BDB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C9B6E3529E8210D0007BDB5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C9B6E3629E8210D0007BDB5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C9B6E3A29E821110007BDB5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C9B6E3B29E821110007BDB5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C9B6E5629E821110007BDB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4C9B6E5729E821110007BDB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C9B6E5929E821110007BDB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFB08F30AE467AAA673BCDE0 /* Pods-AXRightWifi.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AXRightWifi/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youliangwifi.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4C9B6E5A29E821110007BDB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6379435791576BB2F2CC89B /* Pods-AXRightWifi.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AXRightWifi/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youliangwifi.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4C9B6E5C29E821110007BDB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youliangwifi.app.AXRightWifiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AXRightWifi.app/AXRightWifi";
+			};
+			name = Debug;
+		};
+		4C9B6E5D29E821110007BDB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youliangwifi.app.AXRightWifiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AXRightWifi.app/AXRightWifi";
+			};
+			name = Release;
+		};
+		4C9B6E5F29E821110007BDB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youliangwifi.app.AXRightWifiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AXRightWifi;
+			};
+			name = Debug;
+		};
+		4C9B6E6029E821110007BDB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youliangwifi.app.AXRightWifiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AXRightWifi;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C9B6E2429E8210D0007BDB5 /* Build configuration list for PBXProject "AXRightWifi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C9B6E5629E821110007BDB5 /* Debug */,
+				4C9B6E5729E821110007BDB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C9B6E5829E821110007BDB5 /* Build configuration list for PBXNativeTarget "AXRightWifi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C9B6E5929E821110007BDB5 /* Debug */,
+				4C9B6E5A29E821110007BDB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C9B6E5B29E821110007BDB5 /* Build configuration list for PBXNativeTarget "AXRightWifiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C9B6E5C29E821110007BDB5 /* Debug */,
+				4C9B6E5D29E821110007BDB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C9B6E5E29E821110007BDB5 /* Build configuration list for PBXNativeTarget "AXRightWifiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C9B6E5F29E821110007BDB5 /* Debug */,
+				4C9B6E6029E821110007BDB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C9B6E2129E8210D0007BDB5 /* Project object */;
+}
