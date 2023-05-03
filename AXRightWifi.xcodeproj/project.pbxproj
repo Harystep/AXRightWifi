@@ -44,6 +44,12 @@
 		4CFFB0B72A02181B00E3C814 /* HBRouter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CFFB0B62A02181B00E3C814 /* HBRouter.plist */; };
 		4CFFB0BC2A02188700E3C814 /* ZCLoginFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0BB2A02188700E3C814 /* ZCLoginFieldView.m */; };
 		4CFFB0BF2A02261200E3C814 /* ZCForgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0BE2A02261200E3C814 /* ZCForgetController.m */; };
+		4CFFB0C22A0260F800E3C814 /* ZCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0C12A0260F800E3C814 /* ZCNetwork.m */; };
+		4CFFB0CA2A0261B600E3C814 /* CFFHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0C42A0261B600E3C814 /* CFFHud.m */; };
+		4CFFB0CB2A0261B600E3C814 /* ZCHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0C52A0261B600E3C814 /* ZCHud.m */; };
+		4CFFB0CC2A0261B600E3C814 /* CFFAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0C62A0261B600E3C814 /* CFFAlertView.m */; };
+		4CFFB0CF2A0261E200E3C814 /* CFFPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0CE2A0261E200E3C814 /* CFFPopupView.m */; };
+		4CFFB0D22A02627600E3C814 /* ZCLoginManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0D12A02627600E3C814 /* ZCLoginManage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +141,18 @@
 		4CFFB0BB2A02188700E3C814 /* ZCLoginFieldView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCLoginFieldView.m; sourceTree = "<group>"; };
 		4CFFB0BD2A02261200E3C814 /* ZCForgetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCForgetController.h; sourceTree = "<group>"; };
 		4CFFB0BE2A02261200E3C814 /* ZCForgetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCForgetController.m; sourceTree = "<group>"; };
+		4CFFB0C02A0260F800E3C814 /* ZCNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCNetwork.h; sourceTree = "<group>"; };
+		4CFFB0C12A0260F800E3C814 /* ZCNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCNetwork.m; sourceTree = "<group>"; };
+		4CFFB0C42A0261B600E3C814 /* CFFHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFFHud.m; sourceTree = "<group>"; };
+		4CFFB0C52A0261B600E3C814 /* ZCHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCHud.m; sourceTree = "<group>"; };
+		4CFFB0C62A0261B600E3C814 /* CFFAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFFAlertView.m; sourceTree = "<group>"; };
+		4CFFB0C72A0261B600E3C814 /* CFFHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFFHud.h; sourceTree = "<group>"; };
+		4CFFB0C82A0261B600E3C814 /* ZCHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCHud.h; sourceTree = "<group>"; };
+		4CFFB0C92A0261B600E3C814 /* CFFAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFFAlertView.h; sourceTree = "<group>"; };
+		4CFFB0CD2A0261E200E3C814 /* CFFPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFFPopupView.h; sourceTree = "<group>"; };
+		4CFFB0CE2A0261E200E3C814 /* CFFPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFFPopupView.m; sourceTree = "<group>"; };
+		4CFFB0D02A02627600E3C814 /* ZCLoginManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCLoginManage.h; sourceTree = "<group>"; };
+		4CFFB0D12A02627600E3C814 /* ZCLoginManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCLoginManage.m; sourceTree = "<group>"; };
 		CB66007756FA78C6C649CA1B /* libPods-AXRightWifi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AXRightWifi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB08F30AE467AAA673BCDE0 /* Pods-AXRightWifi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXRightWifi.debug.xcconfig"; path = "Target Support Files/Pods-AXRightWifi/Pods-AXRightWifi.debug.xcconfig"; sourceTree = "<group>"; };
 		E6379435791576BB2F2CC89B /* Pods-AXRightWifi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXRightWifi.release.xcconfig"; path = "Target Support Files/Pods-AXRightWifi/Pods-AXRightWifi.release.xcconfig"; sourceTree = "<group>"; };
@@ -247,6 +265,10 @@
 		4CFFB0512A0208D600E3C814 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				4CFFB0C02A0260F800E3C814 /* ZCNetwork.h */,
+				4CFFB0C12A0260F800E3C814 /* ZCNetwork.m */,
+				4CFFB0D02A02627600E3C814 /* ZCLoginManage.h */,
+				4CFFB0D12A02627600E3C814 /* ZCLoginManage.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -282,6 +304,7 @@
 		4CFFB0562A0209D300E3C814 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				4CFFB0C32A0261B600E3C814 /* HUD */,
 				4CFFB0AA2A0217E800E3C814 /* Router */,
 				4CFFB0802A020E9300E3C814 /* ZCConfigColor.h */,
 				4CFFB07F2A020E9300E3C814 /* ZCConfigColor.m */,
@@ -451,6 +474,21 @@
 				4CFFB0BB2A02188700E3C814 /* ZCLoginFieldView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4CFFB0C32A0261B600E3C814 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				4CFFB0CD2A0261E200E3C814 /* CFFPopupView.h */,
+				4CFFB0CE2A0261E200E3C814 /* CFFPopupView.m */,
+				4CFFB0C92A0261B600E3C814 /* CFFAlertView.h */,
+				4CFFB0C62A0261B600E3C814 /* CFFAlertView.m */,
+				4CFFB0C72A0261B600E3C814 /* CFFHud.h */,
+				4CFFB0C42A0261B600E3C814 /* CFFHud.m */,
+				4CFFB0C82A0261B600E3C814 /* ZCHud.h */,
+				4CFFB0C52A0261B600E3C814 /* ZCHud.m */,
+			);
+			path = HUD;
 			sourceTree = "<group>";
 		};
 		68D1615FF6FD26A47491C974 /* Frameworks */ = {
@@ -645,13 +683,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFFB0CB2A0261B600E3C814 /* ZCHud.m in Sources */,
 				4CFFB0B42A0217E800E3C814 /* HBRouter.m in Sources */,
 				4CFFB0722A020A8300E3C814 /* UIView+Positon.m in Sources */,
 				4CFFB0BC2A02188700E3C814 /* ZCLoginFieldView.m in Sources */,
 				4CFFB0982A0211E700E3C814 /* ZCHomeController.m in Sources */,
 				4CFFB0A72A02124400E3C814 /* ZCMyController.m in Sources */,
 				4CFFB0702A020A8300E3C814 /* UIButton+Extra.m in Sources */,
+				4CFFB0D22A02627600E3C814 /* ZCLoginManage.m in Sources */,
 				4CFFB07D2A020DE300E3C814 /* ZCBaseNavController.m in Sources */,
+				4CFFB0C22A0260F800E3C814 /* ZCNetwork.m in Sources */,
 				4CFFB0712A020A8300E3C814 /* UILabel+Exta.m in Sources */,
 				4CFFB0942A02119A00E3C814 /* ZCTabBarController.m in Sources */,
 				4CFFB0BF2A02261200E3C814 /* ZCForgetController.m in Sources */,
@@ -662,6 +703,7 @@
 				4CFFB06B2A020A8300E3C814 /* UIView+Exta.m in Sources */,
 				4CFFB0872A020F3100E3C814 /* ZCLoginController.m in Sources */,
 				4CFFB0912A02107000E3C814 /* ZCRegisterController.m in Sources */,
+				4CFFB0CA2A0261B600E3C814 /* CFFHud.m in Sources */,
 				4CFFB09D2A02120300E3C814 /* ZCShopController.m in Sources */,
 				4CFFB06C2A020A8300E3C814 /* UIColor+Color.m in Sources */,
 				4CFFB08B2A020F7B00E3C814 /* ZCBaseDataTool.m in Sources */,
@@ -671,9 +713,11 @@
 				4CFFB0812A020E9300E3C814 /* ZCConfigColor.m in Sources */,
 				4CFFB06F2A020A8300E3C814 /* NSString+ZCHelper.m in Sources */,
 				4CFFB07E2A020DE300E3C814 /* ZCBaseViewController.m in Sources */,
+				4CFFB0CC2A0261B600E3C814 /* CFFAlertView.m in Sources */,
 				4CFFB06E2A020A8300E3C814 /* UIImage+Exta.m in Sources */,
 				4CFFB08E2A020FA000E3C814 /* ZCUserInfo.m in Sources */,
 				4CFFB0B52A0217E800E3C814 /* HCRouter.m in Sources */,
+				4CFFB0CF2A0261E200E3C814 /* CFFPopupView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *token;
 
+@property (nonatomic, copy) NSString *refresh_token;
+
 @property (nonatomic, copy) NSString *phone;
 
 @property (nonatomic,assign) NSInteger status;

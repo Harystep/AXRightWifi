@@ -50,12 +50,15 @@ static ZCUserInfo *userInfo = nil;
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.token forKey:@"token"];
     [aCoder encodeObject:self.phone forKey:@"phone"];
+    [aCoder encodeObject:self.refresh_token forKey:@"refresh_token"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
         self.token = [aDecoder decodeObjectForKey:@"token"];
         self.phone = [aDecoder decodeObjectForKey:@"phone"];
+        self.refresh_token = [aDecoder decodeObjectForKey:@"refresh_token"];
+        
     }
     return self;
 }

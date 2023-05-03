@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor *)point8TxtColor;
 
-+ (UIColor *)cyanColor;
++ (UIColor *)redColor;
 
 + (UIColor *)point6TxtColor;
 

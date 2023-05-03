@@ -9,4 +9,8 @@
 
 @implementation ZCBaseDataTool
 
++(void)logout {
+    [ZCUserInfo logout];
+}
+
 @end

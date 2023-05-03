@@ -33,8 +33,8 @@
     return UIColor.whiteColor;
 }
 
-+ (UIColor *)cyanColor {
-    return rgba(138, 205, 215, 1);
++ (UIColor *)redColor {
+    return rgba(245, 72, 60, 1);
 }
 
 + (UIColor *)bgColor {

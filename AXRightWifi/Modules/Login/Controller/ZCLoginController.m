@@ -7,6 +7,7 @@
 
 #import "ZCLoginController.h"
 #import "ZCLoginFieldView.h"
+#import "ZCTabBarController.h"
 
 @interface ZCLoginController ()
 
@@ -51,6 +52,7 @@
         make.height.mas_equalTo(50);
     }];
     self.passwordView.contentF.placeholder = @"密码";
+    self.passwordView.contentF.secureTextEntry = YES;
     
     UIButton *loginBtn = [self.view createSimpleButtonWithTitle:@"登录" font:16 color:[ZCConfigColor whiteColor]];
     [self.view addSubview:loginBtn];
@@ -111,7 +113,23 @@
 
 #pragma mark - Comparing Dates
 - (void)loginOperate {
-    
+    NSString *phone = self.phoneView.contentF.text;
+    NSString *pwd = self.passwordView.contentF.text;
+    NSDictionary *parms = @{@"username":checkSafeContent(phone),
+                            @"password":pwd,
+                            @"group":@"ios"
+    };
+    [ZCLoginManage loginAccountOperateURL:parms completeHandler:^(id  _Nonnull responseObj) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self jumpMainUI];
+        });
+    }];
 }
 
+- (void)jumpMainUI {
+    // 已登录，跳转主界面
+    ZCTabBarController *tabBar = [[ZCTabBarController alloc] init];
+    [UIApplication sharedApplication].keyWindow.rootViewController  = tabBar;
+    [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
+}
 @end
