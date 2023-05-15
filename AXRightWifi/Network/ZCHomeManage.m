@@ -44,8 +44,8 @@
 }
 
 //kQueryHomeSubCategoryListInfo
-+ (void)queryHomeSubCategoryListInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler {    
-    [[ZCNetwork shareInstance] request_getWithApi:kQueryHomeSubCategoryListInfo params:@{} isNeedSVP:YES success:^(id  _Nullable responseObj) {
++ (void)queryHomeSubCategoryListInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler {
+    [[ZCNetwork shareInstance] request_getWithApi:kQueryHomeSubCategoryListInfo params:params isNeedSVP:YES success:^(id  _Nullable responseObj) {
       
         completerHandler(responseObj);
     } failed:^(id  _Nullable data) {

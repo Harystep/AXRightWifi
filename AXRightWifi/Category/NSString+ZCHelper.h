@@ -60,6 +60,8 @@ typedef enum
 
 - (nullable NSString *)dn_hideCharacters:(NSUInteger)location length:(NSUInteger)length;
 
++ (NSString *)timeWithYearMonthDayCountDown:(NSString*)timestamp;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -65,6 +65,13 @@
         make.height.mas_equalTo(17);
     }];
     
+    self.timeL = [self createSimpleLabelWithTitle:@" " font:12 bold:NO color:[ZCConfigColor subTxtColor]];
+    [self.contentView addSubview:self.timeL];
+    [self.timeL mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.mas_equalTo(self.contentView.mas_trailing).inset(15);
+        make.centerY.mas_equalTo(self.commentL.mas_centerY);
+    }];
+    
     UIView *sepView = [[UIView alloc] init];
     [self.contentView addSubview:sepView];
     sepView.backgroundColor = [ZCConfigColor bgColor];
@@ -80,10 +87,13 @@
 - (void)setDataDic:(NSDictionary *)dataDic {
     _dataDic = dataDic;
     self.titleL.text = checkSafeContent(dataDic[@"title"]);
-    self.pictureView.imgUrls = dataDic[@"cover"];
+    NSArray *imgs = dataDic[@"cover"];
+    if(imgs.count > 0) {        
+        self.pictureView.imgUrls = dataDic[@"cover"];
+    }
     
     self.commentL.text = [NSString stringWithFormat:@"%@ %@ 评论", checkSafeContent(dataDic[@"author"]), checkSafeContent(dataDic[@"discuss_num"])];
-    self.timeL.text = checkSafeContent(dataDic[@"created_at"]);
+    self.timeL.text = [NSString timeWithYearMonthDayCountDown:checkSafeContent(dataDic[@"updated_at"])];
 }
 
 @end

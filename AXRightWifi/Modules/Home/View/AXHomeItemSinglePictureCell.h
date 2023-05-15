@@ -11,6 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AXHomeItemSinglePictureCell : UITableViewCell
 
+@property (nonatomic,strong) NSDictionary *dataDic;
+
++ (instancetype)homeItemCellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
+
 @end
 
 NS_ASSUME_NONNULL_END

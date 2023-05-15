@@ -243,4 +243,59 @@
     return self;
 }
 
++ (NSString *)timeWithYearMonthDayCountDown:(NSString*)timestamp {// 时间戳转日期// 传入的时间戳timeStr如果是精确到毫秒的记得要/1000
+    NSTimeInterval timeInterval = [timestamp doubleValue];
+    NSDate *detailDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];// 实例化一个NSDateFormatter对象，设定时间格式，这里可以设置成自己需要的格式
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *dateStr = [dateFormatter stringFromDate:detailDate];
+    NSString *today = [NSDate getDayWithFormatter:@"yyyy-MM-dd HH:mm"];
+    
+    return [self compareToday:today date:dateStr];
+}
+
++ (NSString *)compareToday:(NSString *)today date:(NSString *)dateStr {
+    //创建两个日期
+    NSLog(@"%@ %@", today, dateStr);
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSDate *startDate = [dateFormatter dateFromString:dateStr];
+    NSDate *endDate = [dateFormatter dateFromString:today];
+    //利用NSCalendar比较日期的差异
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    /**
+     * 要比较的时间单位,常用如下,可以同时传：
+     *    NSCalendarUnitDay : 天
+     *    NSCalendarUnitYear : 年
+     *    NSCalendarUnitMonth : 月
+     *    NSCalendarUnitHour : 时
+     *    NSCalendarUnitMinute : 分
+     *    NSCalendarUnitSecond : 秒
+     */
+//    NSCalendarUnit unit = NSCalendarUnitDay;//只比较天数差异
+    //比较的结果是NSDateComponents类对象
+    NSDateComponents *delta = [calendar components:NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute fromDate:startDate toDate:endDate options:0];
+//    NSDateComponents *deltaHouse = [calendar components:NSCalendarUnitHour|NSCalendarUnitMinute fromDate:startDate toDate:endDate options:0];
+//    NSDateComponents *deltaMinute = [calendar components:unit fromDate:startDate toDate:endDate options:0];
+    //打印
+    //获取其中的"天"
+    NSLog(@"day:%ld %ld:%ld",delta.day, delta.hour, delta.minute);
+    NSInteger day = delta.day;
+    NSInteger house = delta.hour;
+    NSInteger mouse = delta.minute;
+    NSString *content;
+    if(day > 7) {
+        content = [dateStr substringWithRange:NSMakeRange(0, 10)];
+    } else if (day > 0 && day <= 7) {
+        content = [NSString stringWithFormat:@"%tu天前", day];
+    } else if (house > 0 && day <= 0) {
+        content = [NSString stringWithFormat:@"%tu小时前", house];
+    } else if (mouse > 0 && house <= 0) {
+        content = [NSString stringWithFormat:@"%tu分钟前", mouse];
+    } else {
+        content = @"刚刚";
+    }
+    return content;
+}
+
 @end

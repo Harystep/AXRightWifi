@@ -95,7 +95,7 @@
         [self.scrollView addSubview:classView];
         if (idx == 0) {
             NSDictionary *dic = self.dataArr[idx];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"kProductCategoryIndex0" object:@{@"id":checkSafeContent(dic[@"cate_id"])}];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"kProductCategoryIndex0" object:@{@"id":checkSafeContent(dic[@"id"])}];
         }
     }];
     self.pageIndex = 0;
@@ -180,7 +180,7 @@
     NSLog(@"index:%tu", index);
     self.pageIndex = index;
     NSDictionary *dic = self.dataArr[index];
-    [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"kProductCategoryIndex%tu", index] object:@{@"id":checkSafeContent(dic[@"cate_id"])}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"kProductCategoryIndex%tu", index] object:@{@"id":checkSafeContent(dic[@"id"])}];
 }
 
 - (void)configureSubviews {

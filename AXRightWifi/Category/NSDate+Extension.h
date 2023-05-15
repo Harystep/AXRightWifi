@@ -121,6 +121,7 @@
 + (NSString *)getCurrentTimeSmpFormDate;
 + (NSString *)getDayWithHMS;
 + (NSString *)getDayWithYMD;
++ (NSString *)getDayWithFormatter:(NSString *)formatterStr;
 + (NSString *)stringFormDate:(NSString *)currentDate format:(NSString *)format;
 + (NSString *)convertStringFormDate:(NSDate *)currentDate format:(NSString *)format;
 

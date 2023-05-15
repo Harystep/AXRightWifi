@@ -7,6 +7,9 @@
 
 #import "AXHomeItemView.h"
 #import "AXHomeItemMulPictureCell.h"
+#import "AXHomeItemSinglePictureCell.h"
+#import "AXHomeItemVideoCell.h"
+#import "AXHomeItemCharCell.h"
 
 @interface AXHomeItemView ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -38,11 +41,44 @@
     }];
     kweakself(self);
     
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        weakself.page = 1;
+        [weakself queryAcrtleListInfo];
+    }];
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         weakself.page ++;
         [weakself queryAcrtleListInfo];
     }];
     self.tableView.mj_footer.automaticallyChangeAlpha = YES;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataArr.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *dataDic = self.dataArr[indexPath.row];
+    NSArray *imgUrls = dataDic[@"cover"];
+    NSString *video = checkSafeContent(dataDic[@"video_url"]);
+    if(video.length > 0) {
+        AXHomeItemVideoCell *cell = [AXHomeItemVideoCell homeItemCellWithTableView:tableView indexPath:indexPath];
+        cell.dataDic = self.dataArr[indexPath.row];
+        return cell;
+    } else if (imgUrls.count > 1) {
+        AXHomeItemMulPictureCell *cell = [AXHomeItemMulPictureCell homeItemCellWithTableView:tableView indexPath:indexPath];
+        cell.dataDic = self.dataArr[indexPath.row];
+        return cell;
+    } else if (imgUrls.count == 1) {
+        AXHomeItemSinglePictureCell *cell = [AXHomeItemSinglePictureCell homeItemCellWithTableView:tableView indexPath:indexPath];
+        cell.dataDic = self.dataArr[indexPath.row];
+        return cell;
+    } else {
+        AXHomeItemCharCell *cell = [AXHomeItemCharCell homeItemCellWithTableView:tableView indexPath:indexPath];
+        cell.dataDic = self.dataArr[indexPath.row];
+        return cell;
+    }
 }
 
 - (void)setIndex:(NSInteger)index {
@@ -54,6 +90,8 @@
 - (void)queryTypeData:(NSNotification *)noti {
     NSDictionary *dic = noti.object;
     self.cate_id = checkSafeContent(dic[@"id"]);
+    self.page = 1;
+    [self queryAcrtleListInfo];
 }
 
 - (void)queryAcrtleListInfo {
@@ -68,8 +106,11 @@
         NSArray *dataArr = responseObj[@"data"][@"articles"];
         if(self.page == 1) {
             [self.dataArr removeAllObjects];
+            [self.tableView.mj_header endRefreshing];
+        } else {
+            [self.tableView.mj_footer endRefreshing];
         }
-        [self.dataArr addObject:dataArr];
+        [self.dataArr addObjectsFromArray:dataArr];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
@@ -85,9 +126,18 @@
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.backgroundColor = UIColor.whiteColor;
         [_tableView registerClass:[AXHomeItemMulPictureCell class] forCellReuseIdentifier:@"AXHomeItemMulPictureCell"];
-        
+        [_tableView registerClass:[AXHomeItemCharCell class] forCellReuseIdentifier:@"AXHomeItemCharCell"];
+        [_tableView registerClass:[AXHomeItemVideoCell class] forCellReuseIdentifier:@"AXHomeItemVideoCell"];
+        [_tableView registerClass:[AXHomeItemSinglePictureCell class] forCellReuseIdentifier:@"AXHomeItemSinglePictureCell"];
     }
     return _tableView;
+}
+
+- (NSMutableArray *)dataArr {
+    if (!_dataArr) {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
 }
 
 @end

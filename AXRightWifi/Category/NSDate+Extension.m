@@ -674,6 +674,15 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return currentTimeString;
 }
 
++ (NSString *)getDayWithFormatter:(NSString *)formatterStr {
+    NSDate *datenow = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+           // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
+    [formatter setDateFormat:formatterStr];
+    NSString *currentTimeString = [formatter stringFromDate:datenow];
+    return currentTimeString;
+}
+
 + (NSString *)getDayWithYMD {
     NSDate *datenow = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
