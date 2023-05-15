@@ -81,6 +81,23 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *dataDic = self.dataArr[indexPath.row];
+    NSString *video = checkSafeContent(dataDic[@"video_url"]);
+    if(video.length > 0) {
+        NSURL *url = [NSURL URLWithString:video];
+        AVPlayerItem *playerItem  = [AVPlayerItem playerItemWithURL:url];
+        AVPlayer     *player      = [AVPlayer playerWithPlayerItem:playerItem];
+        
+        AVPlayerViewController *playerVc = [[AVPlayerViewController alloc] init];
+        playerVc.player = player;
+        playerVc.title  = checkSafeContent(dataDic[@"title"]);
+//        [self.superViewController.navigationController pushViewController:playerVc animated:YES];
+        [self.superViewController presentViewController:playerVc animated:YES completion:nil];
+    }
+    
+}
+
 - (void)setIndex:(NSInteger)index {
 
     _index = index;
