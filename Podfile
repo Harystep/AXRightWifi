@@ -20,7 +20,7 @@ target 'AXRightWifi' do
     pod 'MBProgressHUD'
     pod 'SVProgressHUD'
     # 刷新
-    # pod 'MJRefresh'
+    pod 'MJRefresh'
     # 数组转模型
     pod 'MJExtension'
     # 网络请求

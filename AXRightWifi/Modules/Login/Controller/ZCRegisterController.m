@@ -247,7 +247,7 @@
 - (void)mouseOperate {
             
     self.mouse --;
-    if (self.mouse == 0) {
+    if (self.mouse < 1) {
         self.mouse = 60;
         [self configureCodeBtnStatus:YES];
         [self.codeBtn setTitle:NSLocalizedString(@"获取验证码", nil) forState:UIControlStateNormal];
@@ -304,6 +304,7 @@
     [ZCLoginManage registerAccountOperateURL:dictM completeHandler:^(id  _Nonnull responseObj) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self fireTimer];
             [self jumpMainUI];
         });
     }];

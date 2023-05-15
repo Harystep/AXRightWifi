@@ -16,6 +16,13 @@
 		4C9B6E4929E821110007BDB5 /* AXRightWifiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E4829E821110007BDB5 /* AXRightWifiTests.m */; };
 		4C9B6E5329E821110007BDB5 /* AXRightWifiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E5229E821110007BDB5 /* AXRightWifiUITests.m */; };
 		4C9B6E5529E821110007BDB5 /* AXRightWifiUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E5429E821110007BDB5 /* AXRightWifiUITestsLaunchTests.m */; };
+		4CC92F012A12013600948B1C /* AXHomeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC92F002A12013600948B1C /* AXHomeItemView.m */; };
+		4CC92F042A1214FB00948B1C /* AXHomeSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC92F032A1214FB00948B1C /* AXHomeSearchView.m */; };
+		4CC92F072A121D1C00948B1C /* AXHomeItemMulPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC92F062A121D1C00948B1C /* AXHomeItemMulPictureCell.m */; };
+		4CC92F0A2A121D2D00948B1C /* AXHomeItemSinglePictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC92F092A121D2D00948B1C /* AXHomeItemSinglePictureCell.m */; };
+		4CC92F0D2A121D5200948B1C /* AXHomeItemVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC92F0C2A121D5200948B1C /* AXHomeItemVideoCell.m */; };
+		4CC92F102A121D8800948B1C /* AXHomeItemCharCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC92F0F2A121D8800948B1C /* AXHomeItemCharCell.m */; };
+		4CC92F132A121E4A00948B1C /* AXHomeItemPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC92F122A121E4A00948B1C /* AXHomeItemPictureView.m */; };
 		4CFFB06B2A020A8300E3C814 /* UIView+Exta.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0592A020A8300E3C814 /* UIView+Exta.m */; };
 		4CFFB06C2A020A8300E3C814 /* UIColor+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB05B2A020A8300E3C814 /* UIColor+Color.m */; };
 		4CFFB06D2A020A8300E3C814 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB05C2A020A8300E3C814 /* NSDate+Extension.m */; };
@@ -50,6 +57,7 @@
 		4CFFB0CC2A0261B600E3C814 /* CFFAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0C62A0261B600E3C814 /* CFFAlertView.m */; };
 		4CFFB0CF2A0261E200E3C814 /* CFFPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0CE2A0261E200E3C814 /* CFFPopupView.m */; };
 		4CFFB0D22A02627600E3C814 /* ZCLoginManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0D12A02627600E3C814 /* ZCLoginManage.m */; };
+		4CFFB0D52A02771800E3C814 /* ZCHomeManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFB0D42A02771800E3C814 /* ZCHomeManage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +91,20 @@
 		4C9B6E4E29E821110007BDB5 /* AXRightWifiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AXRightWifiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9B6E5229E821110007BDB5 /* AXRightWifiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRightWifiUITests.m; sourceTree = "<group>"; };
 		4C9B6E5429E821110007BDB5 /* AXRightWifiUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRightWifiUITestsLaunchTests.m; sourceTree = "<group>"; };
+		4CC92EFF2A12013600948B1C /* AXHomeItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXHomeItemView.h; sourceTree = "<group>"; };
+		4CC92F002A12013600948B1C /* AXHomeItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXHomeItemView.m; sourceTree = "<group>"; };
+		4CC92F022A1214FB00948B1C /* AXHomeSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXHomeSearchView.h; sourceTree = "<group>"; };
+		4CC92F032A1214FB00948B1C /* AXHomeSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXHomeSearchView.m; sourceTree = "<group>"; };
+		4CC92F052A121D1C00948B1C /* AXHomeItemMulPictureCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXHomeItemMulPictureCell.h; sourceTree = "<group>"; };
+		4CC92F062A121D1C00948B1C /* AXHomeItemMulPictureCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXHomeItemMulPictureCell.m; sourceTree = "<group>"; };
+		4CC92F082A121D2D00948B1C /* AXHomeItemSinglePictureCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXHomeItemSinglePictureCell.h; sourceTree = "<group>"; };
+		4CC92F092A121D2D00948B1C /* AXHomeItemSinglePictureCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXHomeItemSinglePictureCell.m; sourceTree = "<group>"; };
+		4CC92F0B2A121D5200948B1C /* AXHomeItemVideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXHomeItemVideoCell.h; sourceTree = "<group>"; };
+		4CC92F0C2A121D5200948B1C /* AXHomeItemVideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXHomeItemVideoCell.m; sourceTree = "<group>"; };
+		4CC92F0E2A121D8800948B1C /* AXHomeItemCharCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXHomeItemCharCell.h; sourceTree = "<group>"; };
+		4CC92F0F2A121D8800948B1C /* AXHomeItemCharCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXHomeItemCharCell.m; sourceTree = "<group>"; };
+		4CC92F112A121E4A00948B1C /* AXHomeItemPictureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXHomeItemPictureView.h; sourceTree = "<group>"; };
+		4CC92F122A121E4A00948B1C /* AXHomeItemPictureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXHomeItemPictureView.m; sourceTree = "<group>"; };
 		4CFFB0522A02090500E3C814 /* AXPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXPrefixHeader.pch; sourceTree = "<group>"; };
 		4CFFB0592A020A8300E3C814 /* UIView+Exta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Exta.m"; sourceTree = "<group>"; };
 		4CFFB05A2A020A8300E3C814 /* NSString+ZCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZCHelper.h"; sourceTree = "<group>"; };
@@ -153,6 +175,8 @@
 		4CFFB0CE2A0261E200E3C814 /* CFFPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFFPopupView.m; sourceTree = "<group>"; };
 		4CFFB0D02A02627600E3C814 /* ZCLoginManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCLoginManage.h; sourceTree = "<group>"; };
 		4CFFB0D12A02627600E3C814 /* ZCLoginManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCLoginManage.m; sourceTree = "<group>"; };
+		4CFFB0D32A02771800E3C814 /* ZCHomeManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCHomeManage.h; sourceTree = "<group>"; };
+		4CFFB0D42A02771800E3C814 /* ZCHomeManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCHomeManage.m; sourceTree = "<group>"; };
 		CB66007756FA78C6C649CA1B /* libPods-AXRightWifi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AXRightWifi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB08F30AE467AAA673BCDE0 /* Pods-AXRightWifi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXRightWifi.debug.xcconfig"; path = "Target Support Files/Pods-AXRightWifi/Pods-AXRightWifi.debug.xcconfig"; sourceTree = "<group>"; };
 		E6379435791576BB2F2CC89B /* Pods-AXRightWifi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXRightWifi.release.xcconfig"; path = "Target Support Files/Pods-AXRightWifi/Pods-AXRightWifi.release.xcconfig"; sourceTree = "<group>"; };
@@ -241,6 +265,27 @@
 			path = AXRightWifiUITests;
 			sourceTree = "<group>";
 		};
+		4CC92EFE2A12011C00948B1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CC92EFF2A12013600948B1C /* AXHomeItemView.h */,
+				4CC92F002A12013600948B1C /* AXHomeItemView.m */,
+				4CC92F022A1214FB00948B1C /* AXHomeSearchView.h */,
+				4CC92F032A1214FB00948B1C /* AXHomeSearchView.m */,
+				4CC92F052A121D1C00948B1C /* AXHomeItemMulPictureCell.h */,
+				4CC92F062A121D1C00948B1C /* AXHomeItemMulPictureCell.m */,
+				4CC92F082A121D2D00948B1C /* AXHomeItemSinglePictureCell.h */,
+				4CC92F092A121D2D00948B1C /* AXHomeItemSinglePictureCell.m */,
+				4CC92F0B2A121D5200948B1C /* AXHomeItemVideoCell.h */,
+				4CC92F0C2A121D5200948B1C /* AXHomeItemVideoCell.m */,
+				4CC92F0E2A121D8800948B1C /* AXHomeItemCharCell.h */,
+				4CC92F0F2A121D8800948B1C /* AXHomeItemCharCell.m */,
+				4CC92F112A121E4A00948B1C /* AXHomeItemPictureView.h */,
+				4CC92F122A121E4A00948B1C /* AXHomeItemPictureView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4CFFB04F2A02078900E3C814 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +314,8 @@
 				4CFFB0C12A0260F800E3C814 /* ZCNetwork.m */,
 				4CFFB0D02A02627600E3C814 /* ZCLoginManage.h */,
 				4CFFB0D12A02627600E3C814 /* ZCLoginManage.m */,
+				4CFFB0D32A02771800E3C814 /* ZCHomeManage.h */,
+				4CFFB0D42A02771800E3C814 /* ZCHomeManage.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -364,6 +411,7 @@
 		4CFFB0832A020F0700E3C814 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4CC92EFE2A12011C00948B1C /* View */,
 				4CFFB0952A0211D300E3C814 /* Controller */,
 			);
 			path = Home;
@@ -697,7 +745,9 @@
 				4CFFB0942A02119A00E3C814 /* ZCTabBarController.m in Sources */,
 				4CFFB0BF2A02261200E3C814 /* ZCForgetController.m in Sources */,
 				4C9B6E2E29E8210D0007BDB5 /* AppDelegate.m in Sources */,
+				4CC92F042A1214FB00948B1C /* AXHomeSearchView.m in Sources */,
 				4CFFB06D2A020A8300E3C814 /* NSDate+Extension.m in Sources */,
+				4CC92F132A121E4A00948B1C /* AXHomeItemPictureView.m in Sources */,
 				4CFFB0782A020BB000E3C814 /* ZCDevice.m in Sources */,
 				4CFFB0A22A02122F00E3C814 /* ZCFlowController.m in Sources */,
 				4CFFB06B2A020A8300E3C814 /* UIView+Exta.m in Sources */,
@@ -706,8 +756,11 @@
 				4CFFB0CA2A0261B600E3C814 /* CFFHud.m in Sources */,
 				4CFFB09D2A02120300E3C814 /* ZCShopController.m in Sources */,
 				4CFFB06C2A020A8300E3C814 /* UIColor+Color.m in Sources */,
+				4CC92F012A12013600948B1C /* AXHomeItemView.m in Sources */,
+				4CC92F072A121D1C00948B1C /* AXHomeItemMulPictureCell.m in Sources */,
 				4CFFB08B2A020F7B00E3C814 /* ZCBaseDataTool.m in Sources */,
 				4C9B6E3F29E821110007BDB5 /* main.m in Sources */,
+				4CC92F0A2A121D2D00948B1C /* AXHomeItemSinglePictureCell.m in Sources */,
 				4CFFB0732A020A8300E3C814 /* UITextField+Exta.m in Sources */,
 				4CFFB0B32A0217E800E3C814 /* UIResponder+HBRouter.m in Sources */,
 				4CFFB0812A020E9300E3C814 /* ZCConfigColor.m in Sources */,
@@ -715,9 +768,12 @@
 				4CFFB07E2A020DE300E3C814 /* ZCBaseViewController.m in Sources */,
 				4CFFB0CC2A0261B600E3C814 /* CFFAlertView.m in Sources */,
 				4CFFB06E2A020A8300E3C814 /* UIImage+Exta.m in Sources */,
+				4CFFB0D52A02771800E3C814 /* ZCHomeManage.m in Sources */,
 				4CFFB08E2A020FA000E3C814 /* ZCUserInfo.m in Sources */,
+				4CC92F102A121D8800948B1C /* AXHomeItemCharCell.m in Sources */,
 				4CFFB0B52A0217E800E3C814 /* HCRouter.m in Sources */,
 				4CFFB0CF2A0261E200E3C814 /* CFFPopupView.m in Sources */,
+				4CC92F0D2A121D5200948B1C /* AXHomeItemVideoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

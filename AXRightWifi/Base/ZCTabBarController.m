@@ -47,7 +47,7 @@
     
     ZCShopController   *shopVc  = [[ZCShopController alloc] init];
     ZCBaseNavController *shopNav = [[ZCBaseNavController alloc] initWithRootViewController:shopVc];
-    [self setupChildViewController:shopVc title:NSLocalizedString(@"9元购", nil) imageName:@"tabbar_shop_nor" seleceImageName:@"tabbar_shop_sel"];
+    [self setupChildViewController:shopVc title:NSLocalizedString(@"逛逛", nil) imageName:@"tabbar_shop_nor" seleceImageName:@"tabbar_shop_sel"];
     
     ZCMyController   *myVc  = [[ZCMyController alloc] init];
     ZCBaseNavController *myNav = [[ZCBaseNavController alloc] initWithRootViewController:myVc];

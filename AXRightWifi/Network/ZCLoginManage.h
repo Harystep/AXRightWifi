@@ -17,6 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)loginAccountOperateURL:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
 
+/// 修改密码
+/// - Parameters:
+///   - params: <#params description#>
+///   - completerHandler: <#completerHandler description#>
++ (void)changeAccountPwdOperateURL:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
+
 @end
 
 NS_ASSUME_NONNULL_END
