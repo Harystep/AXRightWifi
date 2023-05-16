@@ -20,6 +20,7 @@
 #import <SDWebImage/SDWebImage.h>
 
 #import "HCRouter.h"
+#import "UIResponder+HBRouter.h"
 #import "NSString+ZCHelper.h"
 #import "NSDate+Extension.h"
 #import "UIButton+Extra.h"

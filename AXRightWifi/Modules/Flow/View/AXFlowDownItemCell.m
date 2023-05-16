@@ -87,7 +87,7 @@
         make.height.mas_equalTo(28);
     }];
     [downBtn addTarget:self action:@selector(downOperate) forControlEvents:UIControlEventTouchUpInside];
-    [downBtn configureViewColorGradient:downBtn width:80 height:28 one:rgba(254, 128, 105, 1) two:rgba(246, 72, 60, 1) cornerRadius:4];
+    [downBtn setBackgroundImage:kIMAGE(@"flow_btn_bg") forState:UIControlStateNormal];
 }
 
 - (void)downOperate {

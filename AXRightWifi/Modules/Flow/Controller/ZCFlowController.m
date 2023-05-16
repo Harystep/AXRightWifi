@@ -211,11 +211,4 @@
     return _tableView;
 }
 
-- (AXFlowDonwHeadView *)downHeadView {
-    if(_downHeadView) {
-        _downHeadView = [[AXFlowDonwHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 52)];
-    }
-    return _downHeadView;
-}
-
 @end

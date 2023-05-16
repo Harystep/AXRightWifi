@@ -44,7 +44,7 @@
             make.top.bottom.mas_equalTo(bgView);
             make.width.mas_equalTo(width);
         }];
-        UILabel *contentL = [self createSimpleLabelWithTitle:@" " font:20 bold:YES color:[ZCConfigColor txtColor]];
+        UILabel *contentL = [self createSimpleLabelWithTitle:@"0.0" font:20 bold:YES color:[ZCConfigColor txtColor]];
         [itemView addSubview:contentL];
         [contentL mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.leading.trailing.mas_equalTo(itemView);
