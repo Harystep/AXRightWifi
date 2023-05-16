@@ -33,6 +33,7 @@
 #define AUTO_MARGINY(margin)            margin*(SCREEN_H/812.0)
 
 #define checkSafeContent(content) [NSString safeStringWithConetent:content]
+#define checkSafeURL(content) [NSURL URLWithString:[NSString safeStringWithConetent:content]]
 
 // 刘海屏适配判断
 #define iPhone_X ((UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone) && (UIApplication.sharedApplication.statusBarFrame.size.height > 20.0))

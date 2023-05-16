@@ -53,7 +53,11 @@
     ZCBaseNavController *myNav = [[ZCBaseNavController alloc] initWithRootViewController:myVc];
     [self setupChildViewController:myVc title:NSLocalizedString(@"我的", nil) imageName:@"tabbar_my_nor" seleceImageName:@"tabbar_my_sel"];
         
-    self.viewControllers = @[homeNav, flowNav, shopNav, myNav];
+    self.viewControllers = @[homeNav,
+                             flowNav,
+//                             shopNav,
+                             myNav
+    ];
     self.selectedIndex = 0;
 }
 

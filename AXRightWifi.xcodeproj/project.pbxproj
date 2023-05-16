@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0BFD82806B5A0B62C992F1AE /* libPods-AXRightWifi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB66007756FA78C6C649CA1B /* libPods-AXRightWifi.a */; };
+		4C1B8AB52A131D040051491F /* AXFlowDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8AB42A131D040051491F /* AXFlowDateView.m */; };
+		4C1B8AB82A13200A0051491F /* AXFlowCardDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8AB72A13200A0051491F /* AXFlowCardDataView.m */; };
+		4C1B8ABB2A1336040051491F /* ZCFlowManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8ABA2A1336040051491F /* ZCFlowManage.m */; };
+		4C1B8ABE2A134B9E0051491F /* AXFlowRewardItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8ABD2A134B9E0051491F /* AXFlowRewardItemCell.m */; };
+		4C1B8AC12A13631E0051491F /* AXFlowDonwHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8AC02A13631E0051491F /* AXFlowDonwHeadView.m */; };
+		4C1B8AC42A1367EE0051491F /* AXFlowDownItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8AC32A1367EE0051491F /* AXFlowDownItemCell.m */; };
 		4C9B6E2E29E8210D0007BDB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E2D29E8210D0007BDB5 /* AppDelegate.m */; };
 		4C9B6E3729E8210D0007BDB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B6E3529E8210D0007BDB5 /* Main.storyboard */; };
 		4C9B6E3929E821110007BDB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B6E3829E821110007BDB5 /* Assets.xcassets */; };
@@ -78,6 +84,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C1B8AB32A131D040051491F /* AXFlowDateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXFlowDateView.h; sourceTree = "<group>"; };
+		4C1B8AB42A131D040051491F /* AXFlowDateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXFlowDateView.m; sourceTree = "<group>"; };
+		4C1B8AB62A13200A0051491F /* AXFlowCardDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXFlowCardDataView.h; sourceTree = "<group>"; };
+		4C1B8AB72A13200A0051491F /* AXFlowCardDataView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXFlowCardDataView.m; sourceTree = "<group>"; };
+		4C1B8AB92A1336040051491F /* ZCFlowManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCFlowManage.h; sourceTree = "<group>"; };
+		4C1B8ABA2A1336040051491F /* ZCFlowManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCFlowManage.m; sourceTree = "<group>"; };
+		4C1B8ABC2A134B9E0051491F /* AXFlowRewardItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXFlowRewardItemCell.h; sourceTree = "<group>"; };
+		4C1B8ABD2A134B9E0051491F /* AXFlowRewardItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXFlowRewardItemCell.m; sourceTree = "<group>"; };
+		4C1B8ABF2A13631E0051491F /* AXFlowDonwHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXFlowDonwHeadView.h; sourceTree = "<group>"; };
+		4C1B8AC02A13631E0051491F /* AXFlowDonwHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXFlowDonwHeadView.m; sourceTree = "<group>"; };
+		4C1B8AC22A1367EE0051491F /* AXFlowDownItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXFlowDownItemCell.h; sourceTree = "<group>"; };
+		4C1B8AC32A1367EE0051491F /* AXFlowDownItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXFlowDownItemCell.m; sourceTree = "<group>"; };
 		4C9B6E2929E8210D0007BDB5 /* AXRightWifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXRightWifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9B6E2C29E8210D0007BDB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C9B6E2D29E8210D0007BDB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -208,6 +226,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C1B8AB12A131CDD0051491F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C1B8AB32A131D040051491F /* AXFlowDateView.h */,
+				4C1B8AB42A131D040051491F /* AXFlowDateView.m */,
+				4C1B8AB62A13200A0051491F /* AXFlowCardDataView.h */,
+				4C1B8AB72A13200A0051491F /* AXFlowCardDataView.m */,
+				4C1B8ABC2A134B9E0051491F /* AXFlowRewardItemCell.h */,
+				4C1B8ABD2A134B9E0051491F /* AXFlowRewardItemCell.m */,
+				4C1B8ABF2A13631E0051491F /* AXFlowDonwHeadView.h */,
+				4C1B8AC02A13631E0051491F /* AXFlowDonwHeadView.m */,
+				4C1B8AC22A1367EE0051491F /* AXFlowDownItemCell.h */,
+				4C1B8AC32A1367EE0051491F /* AXFlowDownItemCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C1B8AB22A131CE30051491F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4C9B6E2029E8210D0007BDB5 = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +358,8 @@
 				4CFFB0D12A02627600E3C814 /* ZCLoginManage.m */,
 				4CFFB0D32A02771800E3C814 /* ZCHomeManage.h */,
 				4CFFB0D42A02771800E3C814 /* ZCHomeManage.m */,
+				4C1B8AB92A1336040051491F /* ZCFlowManage.h */,
+				4C1B8ABA2A1336040051491F /* ZCFlowManage.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -457,6 +501,8 @@
 		4CFFB09E2A02120700E3C814 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				4C1B8AB22A131CE30051491F /* Model */,
+				4C1B8AB12A131CDD0051491F /* View */,
 				4CFFB09F2A02122300E3C814 /* Controller */,
 			);
 			path = Flow;
@@ -736,12 +782,14 @@
 				4CFFB0722A020A8300E3C814 /* UIView+Positon.m in Sources */,
 				4CFFB0BC2A02188700E3C814 /* ZCLoginFieldView.m in Sources */,
 				4CFFB0982A0211E700E3C814 /* ZCHomeController.m in Sources */,
+				4C1B8AC12A13631E0051491F /* AXFlowDonwHeadView.m in Sources */,
 				4CFFB0A72A02124400E3C814 /* ZCMyController.m in Sources */,
 				4CFFB0702A020A8300E3C814 /* UIButton+Extra.m in Sources */,
 				4CFFB0D22A02627600E3C814 /* ZCLoginManage.m in Sources */,
 				4CFFB07D2A020DE300E3C814 /* ZCBaseNavController.m in Sources */,
 				4CFFB0C22A0260F800E3C814 /* ZCNetwork.m in Sources */,
 				4CFFB0712A020A8300E3C814 /* UILabel+Exta.m in Sources */,
+				4C1B8AB82A13200A0051491F /* AXFlowCardDataView.m in Sources */,
 				4CFFB0942A02119A00E3C814 /* ZCTabBarController.m in Sources */,
 				4CFFB0BF2A02261200E3C814 /* ZCForgetController.m in Sources */,
 				4C9B6E2E29E8210D0007BDB5 /* AppDelegate.m in Sources */,
@@ -752,16 +800,19 @@
 				4CFFB0A22A02122F00E3C814 /* ZCFlowController.m in Sources */,
 				4CFFB06B2A020A8300E3C814 /* UIView+Exta.m in Sources */,
 				4CFFB0872A020F3100E3C814 /* ZCLoginController.m in Sources */,
+				4C1B8AB52A131D040051491F /* AXFlowDateView.m in Sources */,
 				4CFFB0912A02107000E3C814 /* ZCRegisterController.m in Sources */,
 				4CFFB0CA2A0261B600E3C814 /* CFFHud.m in Sources */,
 				4CFFB09D2A02120300E3C814 /* ZCShopController.m in Sources */,
 				4CFFB06C2A020A8300E3C814 /* UIColor+Color.m in Sources */,
+				4C1B8AC42A1367EE0051491F /* AXFlowDownItemCell.m in Sources */,
 				4CC92F012A12013600948B1C /* AXHomeItemView.m in Sources */,
 				4CC92F072A121D1C00948B1C /* AXHomeItemMulPictureCell.m in Sources */,
 				4CFFB08B2A020F7B00E3C814 /* ZCBaseDataTool.m in Sources */,
 				4C9B6E3F29E821110007BDB5 /* main.m in Sources */,
 				4CC92F0A2A121D2D00948B1C /* AXHomeItemSinglePictureCell.m in Sources */,
 				4CFFB0732A020A8300E3C814 /* UITextField+Exta.m in Sources */,
+				4C1B8ABB2A1336040051491F /* ZCFlowManage.m in Sources */,
 				4CFFB0B32A0217E800E3C814 /* UIResponder+HBRouter.m in Sources */,
 				4CFFB0812A020E9300E3C814 /* ZCConfigColor.m in Sources */,
 				4CFFB06F2A020A8300E3C814 /* NSString+ZCHelper.m in Sources */,
@@ -769,6 +820,7 @@
 				4CFFB0CC2A0261B600E3C814 /* CFFAlertView.m in Sources */,
 				4CFFB06E2A020A8300E3C814 /* UIImage+Exta.m in Sources */,
 				4CFFB0D52A02771800E3C814 /* ZCHomeManage.m in Sources */,
+				4C1B8ABE2A134B9E0051491F /* AXFlowRewardItemCell.m in Sources */,
 				4CFFB08E2A020FA000E3C814 /* ZCUserInfo.m in Sources */,
 				4CC92F102A121D8800948B1C /* AXHomeItemCharCell.m in Sources */,
 				4CFFB0B52A0217E800E3C814 /* HCRouter.m in Sources */,

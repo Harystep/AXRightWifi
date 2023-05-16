@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "ZCLoginManage.h"
 #import "ZCHomeManage.h"
+#import "ZCFlowManage.h"
 
 //错误代码示例
 typedef NS_ENUM(NSUInteger, CFFApiReponseResultCode) {
