@@ -62,6 +62,10 @@ typedef enum
 
 + (NSString *)timeWithYearMonthDayCountDown:(NSString*)timestamp;
 
+/// 高精度
+/// - Parameter string: <#string description#>
++ (NSString *)reviseString:(NSString *)string;
+
 @end
 
 NS_ASSUME_NONNULL_END

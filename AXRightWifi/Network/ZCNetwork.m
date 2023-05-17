@@ -164,7 +164,7 @@ static ZCNetwork *instanceManager = nil;
             success(dict);
         } else if([dict[@"code"] integerValue] == CFFApiErrorCode_Token_Expired){
             //token 过期，需要退回到登录页面
-            [self autoLoginAccount];//刷新token操作
+//            [self autoLoginAccount];//刷新token操作
             return;
         } else {
             failed(dict);

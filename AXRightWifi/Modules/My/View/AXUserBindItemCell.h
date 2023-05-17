@@ -11,7 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AXUserBindItemCell : UITableViewCell
 
-@property (nonatomic,strong) NSDictionary *dataDic;
+@property (nonatomic,strong) NSDictionary *cardDic;
+
+@property (nonatomic,strong) NSDictionary *deviceDic;
 
 + (instancetype)userBindItemCellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
 

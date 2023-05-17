@@ -30,6 +30,11 @@
 		4C9B6E4929E821110007BDB5 /* AXRightWifiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E4829E821110007BDB5 /* AXRightWifiTests.m */; };
 		4C9B6E5329E821110007BDB5 /* AXRightWifiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E5229E821110007BDB5 /* AXRightWifiUITests.m */; };
 		4C9B6E5529E821110007BDB5 /* AXRightWifiUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E5429E821110007BDB5 /* AXRightWifiUITestsLaunchTests.m */; };
+		4CA998112A14C090004906CC /* AXAddCardDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA998102A14C090004906CC /* AXAddCardDeviceController.m */; };
+		4CA998222A14D108004906CC /* MMScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9981C2A14D108004906CC /* MMScanViewController.m */; };
+		4CA998232A14D108004906CC /* MMScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9981D2A14D108004906CC /* MMScanView.m */; };
+		4CA998242A14D108004906CC /* tick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4CA998202A14D108004906CC /* tick.mp3 */; };
+		4CA998252A14D108004906CC /* resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4CA998212A14D108004906CC /* resource.bundle */; };
 		4CC92F012A12013600948B1C /* AXHomeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC92F002A12013600948B1C /* AXHomeItemView.m */; };
 		4CC92F042A1214FB00948B1C /* AXHomeSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC92F032A1214FB00948B1C /* AXHomeSearchView.m */; };
 		4CC92F072A121D1C00948B1C /* AXHomeItemMulPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC92F062A121D1C00948B1C /* AXHomeItemMulPictureCell.m */; };
@@ -120,7 +125,7 @@
 		4C5E53522A145B0700A8D104 /* ZCMineManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCMineManage.m; sourceTree = "<group>"; };
 		4C5E53542A1461CA00A8D104 /* AXUserBindItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUserBindItemCell.h; sourceTree = "<group>"; };
 		4C5E53552A1461CA00A8D104 /* AXUserBindItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXUserBindItemCell.m; sourceTree = "<group>"; };
-		4C9B6E2929E8210D0007BDB5 /* AXRightWifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXRightWifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C9B6E2929E8210D0007BDB5 /* 右量.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "右量.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9B6E2C29E8210D0007BDB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C9B6E2D29E8210D0007BDB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4C9B6E3629E8210D0007BDB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +138,14 @@
 		4C9B6E4E29E821110007BDB5 /* AXRightWifiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AXRightWifiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9B6E5229E821110007BDB5 /* AXRightWifiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRightWifiUITests.m; sourceTree = "<group>"; };
 		4C9B6E5429E821110007BDB5 /* AXRightWifiUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRightWifiUITestsLaunchTests.m; sourceTree = "<group>"; };
+		4CA9980F2A14C090004906CC /* AXAddCardDeviceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXAddCardDeviceController.h; sourceTree = "<group>"; };
+		4CA998102A14C090004906CC /* AXAddCardDeviceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXAddCardDeviceController.m; sourceTree = "<group>"; };
+		4CA9981C2A14D108004906CC /* MMScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMScanViewController.m; sourceTree = "<group>"; };
+		4CA9981D2A14D108004906CC /* MMScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMScanView.m; sourceTree = "<group>"; };
+		4CA9981E2A14D108004906CC /* MMScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMScanView.h; sourceTree = "<group>"; };
+		4CA9981F2A14D108004906CC /* MMScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMScanViewController.h; sourceTree = "<group>"; };
+		4CA998202A14D108004906CC /* tick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tick.mp3; sourceTree = "<group>"; };
+		4CA998212A14D108004906CC /* resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = resource.bundle; sourceTree = "<group>"; };
 		4CC92EFF2A12013600948B1C /* AXHomeItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXHomeItemView.h; sourceTree = "<group>"; };
 		4CC92F002A12013600948B1C /* AXHomeItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXHomeItemView.m; sourceTree = "<group>"; };
 		4CC92F022A1214FB00948B1C /* AXHomeSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXHomeSearchView.h; sourceTree = "<group>"; };
@@ -308,7 +321,7 @@
 		4C9B6E2A29E8210D0007BDB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C9B6E2929E8210D0007BDB5 /* AXRightWifi.app */,
+				4C9B6E2929E8210D0007BDB5 /* 右量.app */,
 				4C9B6E4429E821110007BDB5 /* AXRightWifiTests.xctest */,
 				4C9B6E4E29E821110007BDB5 /* AXRightWifiUITests.xctest */,
 			);
@@ -348,6 +361,19 @@
 				4C9B6E5429E821110007BDB5 /* AXRightWifiUITestsLaunchTests.m */,
 			);
 			path = AXRightWifiUITests;
+			sourceTree = "<group>";
+		};
+		4CA9981B2A14D108004906CC /* MMScanner */ = {
+			isa = PBXGroup;
+			children = (
+				4CA9981C2A14D108004906CC /* MMScanViewController.m */,
+				4CA9981D2A14D108004906CC /* MMScanView.m */,
+				4CA9981E2A14D108004906CC /* MMScanView.h */,
+				4CA9981F2A14D108004906CC /* MMScanViewController.h */,
+				4CA998202A14D108004906CC /* tick.mp3 */,
+				4CA998212A14D108004906CC /* resource.bundle */,
+			);
+			path = MMScanner;
 			sourceTree = "<group>";
 		};
 		4CC92EFE2A12011C00948B1C /* View */ = {
@@ -433,6 +459,7 @@
 		4CFFB0552A0209CD00E3C814 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				4CA9981B2A14D108004906CC /* MMScanner */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -576,6 +603,8 @@
 			children = (
 				4CFFB0A52A02124400E3C814 /* ZCMyController.h */,
 				4CFFB0A62A02124400E3C814 /* ZCMyController.m */,
+				4CA9980F2A14C090004906CC /* AXAddCardDeviceController.h */,
+				4CA998102A14C090004906CC /* AXAddCardDeviceController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -669,7 +698,7 @@
 			);
 			name = AXRightWifi;
 			productName = AXRightWifi;
-			productReference = 4C9B6E2929E8210D0007BDB5 /* AXRightWifi.app */;
+			productReference = 4C9B6E2929E8210D0007BDB5 /* 右量.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4C9B6E4329E821110007BDB5 /* AXRightWifiTests */ = {
@@ -756,7 +785,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9B6E3C29E821110007BDB5 /* LaunchScreen.storyboard in Resources */,
+				4CA998242A14D108004906CC /* tick.mp3 in Resources */,
 				4C9B6E3929E821110007BDB5 /* Assets.xcassets in Resources */,
+				4CA998252A14D108004906CC /* resource.bundle in Resources */,
 				4C9B6E3729E8210D0007BDB5 /* Main.storyboard in Resources */,
 				4CFFB0B72A02181B00E3C814 /* HBRouter.plist in Resources */,
 			);
@@ -830,6 +861,7 @@
 				4CFFB0722A020A8300E3C814 /* UIView+Positon.m in Sources */,
 				4CFFB0BC2A02188700E3C814 /* ZCLoginFieldView.m in Sources */,
 				4CFFB0982A0211E700E3C814 /* ZCHomeController.m in Sources */,
+				4CA998232A14D108004906CC /* MMScanView.m in Sources */,
 				4C1B8AC12A13631E0051491F /* AXFlowDonwHeadView.m in Sources */,
 				4C1B8AD12A138E020051491F /* AXBindCardHeadView.m in Sources */,
 				4CFFB0A72A02124400E3C814 /* ZCMyController.m in Sources */,
@@ -837,6 +869,7 @@
 				4CFFB0D22A02627600E3C814 /* ZCLoginManage.m in Sources */,
 				4CFFB07D2A020DE300E3C814 /* ZCBaseNavController.m in Sources */,
 				4CFFB0C22A0260F800E3C814 /* ZCNetwork.m in Sources */,
+				4CA998112A14C090004906CC /* AXAddCardDeviceController.m in Sources */,
 				4CFFB0712A020A8300E3C814 /* UILabel+Exta.m in Sources */,
 				4C1B8AB82A13200A0051491F /* AXFlowCardDataView.m in Sources */,
 				4CFFB0942A02119A00E3C814 /* ZCTabBarController.m in Sources */,
@@ -844,6 +877,7 @@
 				4C5E53562A1461CA00A8D104 /* AXUserBindItemCell.m in Sources */,
 				4C9B6E2E29E8210D0007BDB5 /* AppDelegate.m in Sources */,
 				4CC92F042A1214FB00948B1C /* AXHomeSearchView.m in Sources */,
+				4CA998222A14D108004906CC /* MMScanViewController.m in Sources */,
 				4CFFB06D2A020A8300E3C814 /* NSDate+Extension.m in Sources */,
 				4CC92F132A121E4A00948B1C /* AXHomeItemPictureView.m in Sources */,
 				4CFFB0782A020BB000E3C814 /* ZCDevice.m in Sources */,
@@ -1056,10 +1090,14 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GQ9J2GY85L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AXRightWifi/Source/AXPrefixHeader.pch;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AXRightWifi/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "右量想使用您的相机拍摄图片以此来获取头像";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "右量想向您的相册中添加图片以此来保存图片";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "右量想使用您的相册来获取头像";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1073,7 +1111,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.youliangwifi.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "右量";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1088,10 +1126,14 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GQ9J2GY85L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AXRightWifi/Source/AXPrefixHeader.pch;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AXRightWifi/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "右量想使用您的相机拍摄图片以此来获取头像";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "右量想向您的相册中添加图片以此来保存图片";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "右量想使用您的相册来获取头像";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1105,7 +1147,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.youliangwifi.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "右量";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -41,7 +41,7 @@
 }
 
 - (void)opBtnClick {
-    
+    [self routerWithEventName:@"add" userInfo:@{}];
 }
 
 - (void)setHaveDataFlag:(NSInteger)haveDataFlag {

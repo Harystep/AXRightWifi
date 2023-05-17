@@ -36,21 +36,16 @@
         make.leading.trailing.bottom.mas_equalTo(self.view);
         make.top.mas_equalTo(self.view.mas_top).offset(56);
     }];
-    self.dataView = [[AXFlowCardDataView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 125)];
+    self.dataView = [[AXFlowCardDataView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 145)];
     self.tableView.tableHeaderView = self.dataView;
-//    [self.view addSubview:self.dataView];
-//    [self.dataView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.leading.trailing.mas_equalTo(self.view);
-//        make.top.mas_equalTo(self.view.mas_top).offset(56);
-//    }];
-//    [self.dataView setViewCornerRadiu:10];
     
     [self getTodayFlowInfo];
     
     [self getRewardListInfo];
     
     [self getDownListInfo];
-    
+        
+    [self getCurrentOperatorInfo];
 }
 
 //將16進制的字符串轉換成NSData(bytes)
@@ -185,20 +180,24 @@
 
 - (void)getCurrentOperatorInfo {
     [ZCFlowManage getCurrentOperatorFlowInfoURL:@{} completeHandler:^(id  _Nonnull responseObj) {
-        NSLog(@"%@", responseObj);
-        NSArray *dataArr = responseObj[@"data"];
+        NSArray *dataArr = checkSafeArray(responseObj[@"data"]);
         NSLog(@"%@", dataArr);
-        if(dataArr.count > 0) {
-            NSDictionary *fisrtDic = dataArr.firstObject;
-            NSArray *service = fisrtDic[@"service"];
-            if(service.count > 0) {
-                NSDictionary *dataDic = service.firstObject;
+        for (NSDictionary *itemDic in dataArr) {
+            if([itemDic[@"is_default"] integerValue] == 1) {
+                NSDictionary *fisrtDic = itemDic;
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.dataView.operatorDic = dataDic;
+                    self.dataView.operatorDic = checkSafeDict(fisrtDic);
                 });
+                break;
             }
         }
     }];
+}
+
+- (void)routerWithEventName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {
+    if([eventName isEqualToString:@"change"]) {//切换卡片
+        
+    }
 }
 
 - (UITableView *)tableView {

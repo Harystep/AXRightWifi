@@ -27,6 +27,9 @@
 
 @property (nonatomic,strong) AXBindCardHeadView *cardHeadView;
 
+@property (nonatomic,strong) NSDictionary *cardFlowDic;//卡-总流量
+@property (nonatomic,strong) NSDictionary *deviceFlowDic;//设备-总流量
+
 @end
 
 @implementation ZCMyController
@@ -35,7 +38,7 @@
     [super viewWillAppear:animated];
     [self getUserBaseInfo];
     [self getUserBindCardInfo];
-    [self getUserBindDeviceInfo];
+    [self getCardTotalFlowInfo];
 }
 
 - (void)viewDidLoad {
@@ -50,7 +53,8 @@
     self.bindType = 1;
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.view.mas_top);
+        make.bottom.mas_equalTo(self.view.mas_bottom).inset(TAB_BAR_HEIGHT);
         make.leading.trailing.mas_equalTo(self.view).inset(15);
     }];
     
@@ -59,10 +63,28 @@
     
 }
 
+- (void)getCardTotalFlowInfo {
+    [ZCMineManage getUserDeviceFlowInfoURL:@{@"sim_card_type":@"1"} completeHandler:^(id  _Nonnull responseObj) {
+        self.cardFlowDic = checkSafeDict(responseObj[@"data"]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.topView.flowDic = self.cardFlowDic;
+        });
+        [self getDeviceTotalFlowInfo];
+    }];
+}
+
+- (void)getDeviceTotalFlowInfo {
+    [ZCMineManage getUserDeviceFlowInfoURL:@{@"sim_card_type":@"2"} completeHandler:^(id  _Nonnull responseObj) {
+        self.deviceFlowDic = checkSafeDict(responseObj[@"data"]);
+    }];
+}
+
 - (void)getUserBaseInfo {
     [ZCMineManage getUserBaseInfoURL:@{} completeHandler:^(id  _Nonnull responseObj) {
         NSLog(@"baseinfo:%@", responseObj);
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.topView.dataDic = checkSafeDict(responseObj[@"data"]);
+        });
     }];
 }
 
@@ -72,8 +94,9 @@
         self.cardArr = [ZCBaseDataTool convertSafeArray:responseObj[@"data"]];
         dispatch_async(dispatch_get_main_queue(), ^{
             NSIndexSet *indexSet = [[NSIndexSet alloc] initWithIndex:0];
-            [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationNone];
         });
+        [self getUserBindDeviceInfo];
     }];
 }
 
@@ -95,9 +118,9 @@
             [ZCUserInfo logout];
         };
     } else if ([eventName isEqualToString:@"卡片流量"]) {
-        self.topView.dataDic = @{};
+        self.topView.flowDic = self.cardFlowDic;
     } else if ([eventName isEqualToString:@"设备流量"]) {
-        self.topView.dataDic = @{};
+        self.topView.flowDic = self.deviceFlowDic;
     } else if ([eventName isEqualToString:@"我的流量卡"]) {
         self.bindType = 1;
         NSIndexSet *indexSet = [[NSIndexSet alloc] initWithIndex:0];
@@ -106,6 +129,15 @@
         self.bindType = 2;
         NSIndexSet *indexSet = [[NSIndexSet alloc] initWithIndex:0];
         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+    } else if ([eventName isEqualToString:@"add"]) {
+        kweakself(self);
+        [HCRouter router:@"AddCardDevice" params:@{} viewController:self animated:YES block:^(id  _Nonnull value) {
+            if(weakself.bindType == 1) {
+                [self getUserBindCardInfo];
+            } else {
+                [self getUserBindDeviceInfo];
+            }
+        }];
     }
 }
 
@@ -127,6 +159,11 @@
         return cell;
     } else {
         AXUserBindItemCell *cell = [AXUserBindItemCell userBindItemCellWithTableView:tableView indexPath:indexPath];
+        if(self.bindType == 1) {
+            cell.cardDic = self.cardArr[indexPath.row];
+        } else {
+            cell.deviceDic = self.deviceArr[indexPath.row];
+        }
         return cell;
     }
 }
@@ -169,7 +206,7 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] init];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

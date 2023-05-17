@@ -85,6 +85,19 @@
     }
 }
 
+- (void)setFlowDic:(NSDictionary *)flowDic {
+    _flowDic = flowDic;
+    NSArray *dataArr = @[[self convertDataWithContent:checkSafeContent(flowDic[@"total_traffic"])],
+                         [self convertDataWithContent:checkSafeContent(flowDic[@"wail_traffic"])],
+                         [self convertDataWithContent:checkSafeContent(flowDic[@"usable_traffic"])]
+    ];
+    for (int i = 0; i < self.contentArr.count; i ++) {
+        UILabel *lb = self.contentArr[i];
+        NSString *content = dataArr[i];
+        lb.attributedText = [content dn_changeFont:FONT_SYSTEM(12) andRange:NSMakeRange(content.length-4, 4)];
+    }
+}
+
 - (NSString *)convertDataWithContent:(NSString *)content {
     return [NSString stringWithFormat:@"%.1fMB", [content doubleValue]];
 }

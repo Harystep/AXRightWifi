@@ -38,27 +38,28 @@
 - (void)setupSubviews {
     
     self.contentView = [[UIView alloc] init];
-    self.contentView.layer.cornerRadius  = 20.f;
+    self.contentView.layer.cornerRadius  = 10.f;
     self.contentView.layer.masksToBounds = YES;
     self.contentView.backgroundColor = UIColor.whiteColor;
     
     self.lineView  = [[UIView alloc] init];
     self.lineView.backgroundColor = UIColor.groupTableViewBackgroundColor;
     
-    self.verView  = [[UIView alloc] init];
-    self.verView.backgroundColor = UIColor.groupTableViewBackgroundColor;
-    
     self.cancelBtn = [[UIButton alloc] init];
     self.cancelBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
     [self.cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-    [self.cancelBtn setTitleColor:[ZCConfigColor subTxtColor] forState:UIControlStateNormal];
+    [self.cancelBtn setTitleColor:[ZCConfigColor whiteColor] forState:UIControlStateNormal];
     [self.cancelBtn addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
+    self.cancelBtn.backgroundColor = rgba(209, 29, 32, 1);
+    [self.cancelBtn setViewCornerRadiu:4];
     
     self.confirmBtn = [[UIButton alloc] init];
     self.confirmBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
     [self.confirmBtn setTitle:@"确认" forState:UIControlStateNormal];
-    [self.confirmBtn setTitleColor:[ZCConfigColor txtColor] forState:UIControlStateNormal];
+    [self.confirmBtn setTitleColor:[ZCConfigColor whiteColor] forState:UIControlStateNormal];
     [self.confirmBtn addTarget:self action:@selector(confirmAction) forControlEvents:UIControlEventTouchUpInside];
+    self.confirmBtn.backgroundColor = rgba(209, 29, 32, 1);
+    [self.confirmBtn setViewCornerRadiu:4];
     
     self.alertTitle = [[UILabel alloc] init];
     self.alertTitle.font = [UIFont boldSystemFontOfSize:AUTO_FONT_SIZE(17)];
@@ -80,10 +81,9 @@
     
     [self addSubview:self.contentView];
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
         make.centerX.centerY.mas_equalTo(self);
-        make.width.mas_offset(SCREEN_W * 0.68);
-    }];
+        make.width.mas_equalTo(SCREEN_W-40);
+    }];    
     
     [self.contentView addSubview:self.alertTitle];
     [self.alertTitle mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -106,32 +106,26 @@
         make.leading.trailing.mas_equalTo(self.contentView);
         make.height.mas_offset(1);
     }];
+    self.lineView.hidden = YES;
     
     [self.contentView addSubview:self.cancelBtn];
     [self.cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.mas_equalTo(self.lineView.mas_bottom);
-        make.leading.bottom.mas_equalTo(self.contentView);
-        make.width.mas_offset(SCREEN_W * 0.34);
-        make.height.mas_offset(SCREEN_W * 0.12);
+        make.bottom.mas_equalTo(self.contentView).inset(20);
+        make.width.mas_offset(120);
+        make.height.mas_offset(42);
+        make.centerX.mas_equalTo(self.contentView.mas_centerX).offset(-72);
     }];
     
     [self.contentView addSubview:self.confirmBtn];
     [self.confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.top.bottom.mas_equalTo(self.cancelBtn);
-        make.leading.mas_equalTo(self.cancelBtn.mas_trailing);
-        make.trailing.mas_equalTo(self.contentView.mas_trailing);
+        make.width.mas_offset(120);
+        make.height.mas_offset(42);
+        make.centerX.mas_equalTo(self.contentView.mas_centerX).offset(72);
+        make.centerY.mas_equalTo(self.cancelBtn.mas_centerY);
     }];
     
-    [self.contentView addSubview:self.verView];
-    [self.verView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.top.mas_equalTo(self.lineView.mas_bottom);
-        make.centerX.mas_equalTo(self.contentView.mas_centerX);
-        make.width.mas_equalTo(1);
-        make.bottom.mas_equalTo(self.contentView.mas_bottom);
-    }];
 }
 
 #pragma mark -- Public Methods

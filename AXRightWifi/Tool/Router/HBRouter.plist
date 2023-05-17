@@ -6,5 +6,7 @@
 	<string>ZCForgetController</string>
 	<key>Register</key>
 	<string>ZCRegisterController</string>
+	<key>AddCardDevice</key>
+	<string>AXAddCardDeviceController</string>
 </dict>
 </plist>

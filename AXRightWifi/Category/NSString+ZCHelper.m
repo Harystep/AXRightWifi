@@ -298,4 +298,12 @@
     return content;
 }
 
++ (NSString *)reviseString:(NSString *)string {
+    /* 直接传入精度丢失有问题的Double类型*/
+    double conversionValue = (double)[string doubleValue];
+    NSString *doubleString = [NSString stringWithFormat:@"%lf", conversionValue];
+    NSDecimalNumber *decNumber = [NSDecimalNumber decimalNumberWithString:doubleString];
+    return [decNumber stringValue];
+}
+
 @end

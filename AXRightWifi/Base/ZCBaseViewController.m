@@ -116,7 +116,7 @@
             make.height.width.mas_equalTo(44);
         }];
         [self.titleL mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.trailing.mas_equalTo(_naviView.mas_trailing).inset(AUTO_MARGIN(20));
+            make.centerX.mas_equalTo(_naviView.mas_centerX);
             make.centerY.mas_equalTo(self.backBtn);
         }];
     }
@@ -125,7 +125,7 @@
 
 - (UILabel *)titleL {
     if (!_titleL) {
-        _titleL = [self.view createSimpleLabelWithTitle:@"" font:20 bold:YES color:[ZCConfigColor txtColor]];
+        _titleL = [self.view createSimpleLabelWithTitle:@"" font:17 bold:NO color:[ZCConfigColor txtColor]];
         
     }
     return _titleL;

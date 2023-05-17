@@ -17,6 +17,14 @@
 
 @property (nonatomic,strong) AXFlowDateView *dataView;
 
+@property (nonatomic,strong) UILabel *moneyL;
+
+@property (nonatomic,strong) UIImageView *levelIv;
+
+@property (nonatomic,strong) UIView *baseView;
+
+@property (nonatomic,strong) UIButton *alertBtn;
+
 @end
 
 @implementation AXMyTopView
@@ -40,12 +48,7 @@
     }];
     [self.iconIv setViewCornerRadiu:30];
     
-    self.nameL = [self createSimpleLabelWithTitle:@" " font:18 bold:YES color:[ZCConfigColor whiteColor]];
-    [self addSubview:self.nameL];
-    [self.nameL mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.mas_equalTo(self.iconIv.mas_centerY);
-        make.leading.mas_equalTo(self.iconIv.mas_trailing).offset(15);
-    }];
+    [self createUserBaseInfo];
     
     UIView *dataView = [[UIView alloc] init];
     [self addSubview:dataView];
@@ -100,8 +103,80 @@
     [flow addTarget:self action:@selector(flowDetailOperate:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)flowDetailOperate:(UIButton *)sender {
+- (void)createUserBaseInfo {
+    self.baseView = [[UIView alloc] init];
+    [self addSubview:self.baseView];
+    [self.baseView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.top.mas_equalTo(self.iconIv);
+        make.leading.mas_equalTo(self.iconIv.mas_trailing);
+        make.trailing.mas_equalTo(self.mas_trailing).inset(60);
+    }];
+    self.nameL = [self createSimpleLabelWithTitle:@" " font:18 bold:YES color:[ZCConfigColor whiteColor]];
+    [self.baseView addSubview:self.nameL];
+    [self.nameL mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.baseView.mas_top);
+        make.leading.mas_equalTo(self.baseView.mas_leading).offset(15);
+        make.height.mas_equalTo(22);
+    }];
     
+    self.moneyL = [self createSimpleLabelWithTitle:@" " font:10 bold:YES color:[ZCConfigColor whiteColor]];
+    [self.baseView addSubview:self.moneyL];
+    [self.moneyL mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(self.baseView.mas_leading).offset(15);
+        make.height.mas_equalTo(22);
+        make.top.mas_equalTo(self.nameL.mas_bottom).offset(7);
+    }];
+    [self.moneyL setViewCornerRadiu:11];
+    [self.moneyL setViewBorderWithColor:1 color:[ZCConfigColor whiteColor]];
+    
+    self.levelIv = [[UIImageView alloc] init];
+    [self.baseView addSubview:self.levelIv];
+    [self.levelIv mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.moneyL.mas_centerY);
+        make.leading.mas_equalTo(self.moneyL.mas_trailing).offset(10);
+        make.width.mas_equalTo(62);
+        make.height.mas_equalTo(19);
+    }];
+    
+    self.alertBtn = [self createSimpleButtonWithTitle:@"请先登录" font:18 color:[ZCConfigColor whiteColor]];
+    self.alertBtn.titleLabel.font = FONT_BOLD(18);
+    [self addSubview:self.alertBtn];
+    [self.alertBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.iconIv.mas_centerY);
+        make.leading.mas_equalTo(self.iconIv.mas_trailing).offset(15);
+    }];
+    [self configureUserBaseInfo];
+}
+
+- (void)flowDetailOperate:(UIButton *)sender {
+    [self routerWithEventName:sender.titleLabel.text userInfo:@{}];
+}
+
+- (void)setDataDic:(NSDictionary *)dataDic {
+    _dataDic = dataDic;
+    [self configureUserBaseInfo];
+    NSDictionary *account = checkSafeDict(dataDic[@"account"]);
+    NSDictionary *memberLevel = checkSafeDict(dataDic[@"memberLevel"]);
+    self.nameL.text = checkSafeContent(dataDic[@"nickname"]);
+    [self.iconIv sd_setImageWithURL:checkSafeURL(dataDic[@"head_portrait"])];
+    self.moneyL.text = [NSString stringWithFormat:@"  余额：¥%.2f  ", [checkSafeContent(account[@"user_money"]) doubleValue]];
+    NSString *imgStr = [NSString stringWithFormat:@"user_level_%@", checkSafeContent(memberLevel[@"level"])];
+    self.levelIv.image = kIMAGE(imgStr);
+}
+
+- (void)setFlowDic:(NSDictionary *)flowDic {
+    _flowDic = flowDic;
+    self.dataView.flowDic = flowDic;
+}
+
+- (void)configureUserBaseInfo {
+    if(kUserInfo.token.length > 0) {
+        self.baseView.hidden = NO;
+        self.alertBtn.hidden = YES;
+    } else {
+        self.baseView.hidden = YES;
+        self.alertBtn.hidden = NO;
+    }
 }
 
 @end

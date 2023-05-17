@@ -64,7 +64,7 @@
     [changeBtn setViewCornerRadiu:12];
     [changeBtn setViewBorderWithColor:1 color:rgba(245, 70, 58, 1)];
     [changeBtn addTarget:self action:@selector(changeBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
+    //82+dataView.height  dataView.height=48
     self.dataView = [[AXFlowDateView alloc] init];
     [bgView addSubview:self.dataView];
     [self.dataView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -94,12 +94,34 @@
 
 - (void)setOperatorDic:(NSDictionary *)operatorDic {
     _operatorDic = operatorDic;
-    [self.iconIv sd_setImageWithURL:[NSURL URLWithString:checkSafeContent(operatorDic[@"logo"])]];
-    self.titleL.text = checkSafeContent(operatorDic[@"value"]);
+    if([operatorDic[@"sim_card_type"] integerValue] == 1) {//卡
+        NSArray *service = checkSafeArray(operatorDic[@"service"]);
+        for (NSDictionary *itemDic in service) {
+            if([itemDic[@"is_default"] integerValue] == 1) {
+                [self.iconIv sd_setImageWithURL:[NSURL URLWithString:checkSafeContent(itemDic[@"logo"])]];
+                self.titleL.text = checkSafeContent(itemDic[@"master_service_name"]);
+                break;
+            }
+        }        
+    } else if ([operatorDic[@"sim_card_type"] integerValue] == 2) {//设备
+        NSArray *service = checkSafeArray(operatorDic[@"service"]);
+        for (NSDictionary *itemDic in service) {
+            if([itemDic[@"is_default"] integerValue] == 1) {
+                NSArray *sim_list = checkSafeArray(itemDic[@"sim_list"]);
+                for (NSDictionary *simDic in sim_list) {
+                    if([simDic[@"is_default"] integerValue] == 1) {
+                        [self.iconIv sd_setImageWithURL:[NSURL URLWithString:checkSafeContent(simDic[@"logo"])]];
+                        self.titleL.text = checkSafeContent(simDic[@"master_service_name"]);
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
 
 - (void)changeBtnClick {
-    
+    [self routerWithEventName:@"change" userInfo:@{}];
 }
 
 @end

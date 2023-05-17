@@ -23,6 +23,18 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - completerHandler: <#completerHandler description#>
 + (void)getUserBindInfoURL:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
 
+/// 获取设备/卡总流量
+/// - Parameters:
+///   - params: <#params description#>
+///   - completerHandler: <#completerHandler description#>
++ (void)getUserDeviceFlowInfoURL:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
+
+/// 绑定卡/设备
+/// - Parameters:
+///   - params: <#params description#>
+///   - completerHandler: <#completerHandler description#>
++ (void)bindUserDeviceOperateURL:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
+
 @end
 
 NS_ASSUME_NONNULL_END
