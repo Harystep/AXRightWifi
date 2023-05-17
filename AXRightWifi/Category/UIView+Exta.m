@@ -103,7 +103,7 @@
 
 - (void)setupViewRound:(UIView *)targetView corners:(UIRectCorner)corners {
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:targetView.bounds byRoundingCorners:corners
-    cornerRadii:CGSizeMake(AUTO_MARGIN(16), AUTO_MARGIN(16))];
+    cornerRadii:CGSizeMake(10, 10)];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc]init];
     // 设置大小
     maskLayer.frame = targetView.bounds;

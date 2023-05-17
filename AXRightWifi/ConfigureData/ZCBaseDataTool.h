@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)logout;
 
++ (NSArray *)convertSafeArray:(id)array;
+
++ (NSDictionary *)convertSafeDict:(id)dict;
+
 @end
 
 NS_ASSUME_NONNULL_END

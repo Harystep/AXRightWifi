@@ -19,6 +19,9 @@
 		4C1B8ACE2A1387D30051491F /* AXMyBaseFuncCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8ACD2A1387D30051491F /* AXMyBaseFuncCell.m */; };
 		4C1B8AD12A138E020051491F /* AXBindCardHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8AD02A138E020051491F /* AXBindCardHeadView.m */; };
 		4C1B8AD42A138E0F0051491F /* AXBindCardFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8AD32A138E0F0051491F /* AXBindCardFooterView.m */; };
+		4C1B8AD72A13928E0051491F /* AXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8AD62A13928E0051491F /* AXAlertView.m */; };
+		4C5E53532A145B0700A8D104 /* ZCMineManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E53522A145B0700A8D104 /* ZCMineManage.m */; };
+		4C5E53562A1461CA00A8D104 /* AXUserBindItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E53552A1461CA00A8D104 /* AXUserBindItemCell.m */; };
 		4C9B6E2E29E8210D0007BDB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E2D29E8210D0007BDB5 /* AppDelegate.m */; };
 		4C9B6E3729E8210D0007BDB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B6E3529E8210D0007BDB5 /* Main.storyboard */; };
 		4C9B6E3929E821110007BDB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9B6E3829E821110007BDB5 /* Assets.xcassets */; };
@@ -111,6 +114,12 @@
 		4C1B8AD02A138E020051491F /* AXBindCardHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXBindCardHeadView.m; sourceTree = "<group>"; };
 		4C1B8AD22A138E0F0051491F /* AXBindCardFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXBindCardFooterView.h; sourceTree = "<group>"; };
 		4C1B8AD32A138E0F0051491F /* AXBindCardFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXBindCardFooterView.m; sourceTree = "<group>"; };
+		4C1B8AD52A13928E0051491F /* AXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXAlertView.h; sourceTree = "<group>"; };
+		4C1B8AD62A13928E0051491F /* AXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXAlertView.m; sourceTree = "<group>"; };
+		4C5E53512A145B0700A8D104 /* ZCMineManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCMineManage.h; sourceTree = "<group>"; };
+		4C5E53522A145B0700A8D104 /* ZCMineManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCMineManage.m; sourceTree = "<group>"; };
+		4C5E53542A1461CA00A8D104 /* AXUserBindItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUserBindItemCell.h; sourceTree = "<group>"; };
+		4C5E53552A1461CA00A8D104 /* AXUserBindItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXUserBindItemCell.m; sourceTree = "<group>"; };
 		4C9B6E2929E8210D0007BDB5 /* AXRightWifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXRightWifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9B6E2C29E8210D0007BDB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C9B6E2D29E8210D0007BDB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -278,6 +287,8 @@
 				4C1B8AD02A138E020051491F /* AXBindCardHeadView.m */,
 				4C1B8AD22A138E0F0051491F /* AXBindCardFooterView.h */,
 				4C1B8AD32A138E0F0051491F /* AXBindCardFooterView.m */,
+				4C5E53542A1461CA00A8D104 /* AXUserBindItemCell.h */,
+				4C5E53552A1461CA00A8D104 /* AXUserBindItemCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -392,6 +403,8 @@
 				4CFFB0D42A02771800E3C814 /* ZCHomeManage.m */,
 				4C1B8AB92A1336040051491F /* ZCFlowManage.h */,
 				4C1B8ABA2A1336040051491F /* ZCFlowManage.m */,
+				4C5E53512A145B0700A8D104 /* ZCMineManage.h */,
+				4C5E53522A145B0700A8D104 /* ZCMineManage.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -606,6 +619,8 @@
 		4CFFB0C32A0261B600E3C814 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				4C1B8AD52A13928E0051491F /* AXAlertView.h */,
+				4C1B8AD62A13928E0051491F /* AXAlertView.m */,
 				4CFFB0CD2A0261E200E3C814 /* CFFPopupView.h */,
 				4CFFB0CE2A0261E200E3C814 /* CFFPopupView.m */,
 				4CFFB0C92A0261B600E3C814 /* CFFAlertView.h */,
@@ -826,6 +841,7 @@
 				4C1B8AB82A13200A0051491F /* AXFlowCardDataView.m in Sources */,
 				4CFFB0942A02119A00E3C814 /* ZCTabBarController.m in Sources */,
 				4CFFB0BF2A02261200E3C814 /* ZCForgetController.m in Sources */,
+				4C5E53562A1461CA00A8D104 /* AXUserBindItemCell.m in Sources */,
 				4C9B6E2E29E8210D0007BDB5 /* AppDelegate.m in Sources */,
 				4CC92F042A1214FB00948B1C /* AXHomeSearchView.m in Sources */,
 				4CFFB06D2A020A8300E3C814 /* NSDate+Extension.m in Sources */,
@@ -855,8 +871,10 @@
 				4CFFB07E2A020DE300E3C814 /* ZCBaseViewController.m in Sources */,
 				4CFFB0CC2A0261B600E3C814 /* CFFAlertView.m in Sources */,
 				4C1B8AC82A1375B70051491F /* AXMyTopView.m in Sources */,
+				4C1B8AD72A13928E0051491F /* AXAlertView.m in Sources */,
 				4CFFB06E2A020A8300E3C814 /* UIImage+Exta.m in Sources */,
 				4CFFB0D52A02771800E3C814 /* ZCHomeManage.m in Sources */,
+				4C5E53532A145B0700A8D104 /* ZCMineManage.m in Sources */,
 				4C1B8ABE2A134B9E0051491F /* AXFlowRewardItemCell.m in Sources */,
 				4CFFB08E2A020FA000E3C814 /* ZCUserInfo.m in Sources */,
 				4CC92F102A121D8800948B1C /* AXHomeItemCharCell.m in Sources */,

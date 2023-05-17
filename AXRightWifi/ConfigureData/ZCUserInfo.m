@@ -1,6 +1,7 @@
 
 
 #import "ZCUserInfo.h"
+#import "ZCLoginController.h"
 
 static ZCUserInfo *userInfo = nil;
 
@@ -37,6 +38,10 @@ static ZCUserInfo *userInfo = nil;
 + (instancetype)logout {
     userInfo = nil;
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"kUserInfo"];
+    ZCLoginController *login = [[ZCLoginController alloc] init];
+    ZCBaseNavController *nav = [[ZCBaseNavController alloc] initWithRootViewController:login];
+    [UIApplication sharedApplication].keyWindow.rootViewController  = nav;
+    [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
     return userInfo;
 }
 

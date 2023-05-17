@@ -30,17 +30,11 @@
 }
 
 - (void)createSubviews {
-    UIImageView *bgIv = [[UIImageView alloc] initWithImage:kIMAGE(@"my_top_bg")];
-    [self addSubview:bgIv];
-    [bgIv mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.top.mas_equalTo(self);
-        make.height.mas_equalTo(230);
-    }];
     
     self.iconIv = [[UIImageView alloc] initWithImage:kIMAGE(@"my_user_def_icon")];
     [self addSubview:self.iconIv];
     [self.iconIv mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(self.mas_leading).offset(15);
+        make.leading.mas_equalTo(self.mas_leading);
         make.top.mas_equalTo(self.mas_top).offset(65);
         make.height.width.mas_equalTo(60);
     }];
@@ -56,7 +50,7 @@
     UIView *dataView = [[UIView alloc] init];
     [self addSubview:dataView];
     [dataView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.mas_equalTo(self).inset(15);
+        make.leading.trailing.mas_equalTo(self);
         make.top.mas_equalTo(self.iconIv.mas_bottom).offset(15);
         make.height.mas_equalTo(160);        
     }];

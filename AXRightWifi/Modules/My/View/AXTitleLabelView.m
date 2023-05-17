@@ -78,6 +78,7 @@
         make.height.mas_equalTo(2);
         make.width.mas_equalTo(sender.mas_width);
     }];
+    [self routerWithEventName:sender.titleLabel.text userInfo:@{}];
 }
 
 - (void)setTitleArr:(NSArray *)titleArr {

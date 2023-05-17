@@ -36,7 +36,7 @@
         make.leading.trailing.bottom.mas_equalTo(self.view);
         make.top.mas_equalTo(self.view.mas_top).offset(56);
     }];
-    self.dataView = [[AXFlowCardDataView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 175)];
+    self.dataView = [[AXFlowCardDataView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 125)];
     self.tableView.tableHeaderView = self.dataView;
 //    [self.view addSubview:self.dataView];
 //    [self.dataView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -123,7 +123,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if(section == 1) {
-        return 52.+15.;
+        if(self.downArr.count > 0) {
+            return 52.+15.;
+        } else {
+            return .01;
+        }
     } else {
         return .01;
     }
@@ -131,9 +135,13 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if(section == 1) {
-        AXFlowDonwHeadView *view = [[AXFlowDonwHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 52)];
-        [self.view setupViewRound:view.bgView corners:UIRectCornerTopLeft|UIRectCornerTopRight];
-        return view;
+        if(self.downArr.count > 0) {
+            AXFlowDonwHeadView *view = [[AXFlowDonwHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 52)];
+            [self.view setupViewRound:view.bgView corners:UIRectCornerTopLeft|UIRectCornerTopRight];
+            return view;
+        } else {
+            return [UIView new];
+        }
     } else {
         return [UIView new];
     }
@@ -150,7 +158,7 @@
 - (void)getRewardListInfo {
     [ZCFlowManage getFlowRewardListInfoURL:@{} completeHandler:^(id  _Nonnull responseObj) {
         NSLog(@"reward:%@", responseObj);
-        self.rewardArr = responseObj[@"data"];
+        self.rewardArr = [ZCBaseDataTool convertSafeArray:responseObj[@"data"]];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
@@ -160,7 +168,7 @@
 - (void)getDownListInfo {
     [ZCFlowManage getFlowDownListInfoURL:@{} completeHandler:^(id  _Nonnull responseObj) {
         NSLog(@"down:%@", responseObj);
-        self.downArr = responseObj[@"data"];
+        self.downArr = [ZCBaseDataTool convertSafeArray:responseObj[@"data"]];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
@@ -172,7 +180,6 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             self.dataView.dataDic = responseObj[@"data"];
         });
-//        [self getCurrentOperatorInfo];
     }];
 }
 

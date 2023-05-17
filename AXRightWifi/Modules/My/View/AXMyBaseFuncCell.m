@@ -42,7 +42,8 @@
     [self.contentView addSubview:bgView];
     bgView.backgroundColor = [ZCConfigColor whiteColor];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.top.leading.trailing.mas_equalTo(self.contentView).inset(15);
+        make.bottom.top.mas_equalTo(self.contentView).inset(15);
+        make.leading.trailing.mas_equalTo(self.contentView);
         make.height.mas_equalTo(40*titleArr.count);
     }];
     [bgView setViewCornerRadiu:10];
@@ -71,7 +72,7 @@
             break;
         }
     }
-    
+    [self routerWithEventName:content userInfo:@{}];
 }
 
 - (void)setupTargetViewSubviews:(UIView *)targetView data:(NSString *)title {

@@ -74,17 +74,17 @@
     }];
     self.dataView.descArr = @[@"今日预计获得", @"今日到账流量", @"等待到账流量"];
     
-    UILabel *alertL = [self createSimpleLabelWithTitle:@"" font:14 bold:NO color:[ZCConfigColor txtColor]];
-    [self addSubview:alertL];
-    [alertL mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.mas_equalTo(self);
-        make.height.mas_equalTo(50);
-        make.top.mas_equalTo(bgView.mas_bottom);
-        make.bottom.mas_equalTo(self.mas_bottom);
-    }];
-    alertL.textAlignment = NSTextAlignmentCenter;
-    NSString *content = @"立即前往产品中心购买卡片/设备";
-    alertL.attributedText = [content dn_changeColor:rgba(209, 29, 32, 1) andRange:NSMakeRange(4, 4)];
+//    UILabel *alertL = [self createSimpleLabelWithTitle:@"" font:14 bold:NO color:[ZCConfigColor txtColor]];
+//    [self addSubview:alertL];
+//    [alertL mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.leading.trailing.mas_equalTo(self);
+//        make.height.mas_equalTo(50);
+//        make.top.mas_equalTo(bgView.mas_bottom);
+//        make.bottom.mas_equalTo(self.mas_bottom);
+//    }];
+//    alertL.textAlignment = NSTextAlignmentCenter;
+//    NSString *content = @"立即前往产品中心购买卡片/设备";
+//    alertL.attributedText = [content dn_changeColor:rgba(209, 29, 32, 1) andRange:NSMakeRange(4, 4)];
 }
 
 - (void)setDataDic:(NSDictionary *)dataDic {

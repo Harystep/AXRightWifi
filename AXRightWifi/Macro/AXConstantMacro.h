@@ -34,6 +34,8 @@
 
 #define checkSafeContent(content) [NSString safeStringWithConetent:content]
 #define checkSafeURL(content) [NSURL URLWithString:[NSString safeStringWithConetent:content]]
+#define checkSafeArray(data) [ZCBaseDataTool convertSafeArray:data];
+#define checkSafeDict(data) [ZCBaseDataTool convertSafeDict:data];
 
 // 刘海屏适配判断
 #define iPhone_X ((UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone) && (UIApplication.sharedApplication.statusBarFrame.size.height > 20.0))
