@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 首页分类
 /// - Parameters:
-///   - params: <#params description#>
+///   - params: params description
 ///   - completerHandler: <#completerHandler description#>
 + (void)queryHomeCategoryListInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
 
@@ -24,6 +24,21 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - params: <#params description#>
 ///   - completerHandler: <#completerHandler description#>
 + (void)queryHomeSubCategoryListInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
+
+
+/// 获取咨询详情
+/// - Parameters:
+///   - params: <#params description#>
+///   - completerHandler: <#completerHandler description#>
++ (void)queryArticleDetailInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
+
+/// 获取咨询评论
+/// - Parameters:
+///   - params: <#params description#>
+///   - completerHandler: <#completerHandler description#>
++ (void)queryArticleCommentListInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
+
++ (void)commentArticleOperateInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
 
 @end
 

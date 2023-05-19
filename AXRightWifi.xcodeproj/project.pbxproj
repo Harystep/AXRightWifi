@@ -25,6 +25,12 @@
 		4C5493902A17788E005F7D66 /* AXChangeFlowDeviceAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C54938F2A17788E005F7D66 /* AXChangeFlowDeviceAlertView.m */; };
 		4C5493932A177A9D005F7D66 /* AXChangeFlowDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5493922A177A9D005F7D66 /* AXChangeFlowDeviceCell.m */; };
 		4C5493962A177C86005F7D66 /* AXChangeFlowOperatorDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5493952A177C86005F7D66 /* AXChangeFlowOperatorDeviceCell.m */; };
+		4C5493992A17AA18005F7D66 /* AXConsultationDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5493982A17AA18005F7D66 /* AXConsultationDetailController.m */; };
+		4C54939C2A17AED9005F7D66 /* AXArticleDetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C54939B2A17AED9005F7D66 /* AXArticleDetailHeadView.m */; };
+		4C54939F2A17B550005F7D66 /* AXArticleCommentHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C54939E2A17B550005F7D66 /* AXArticleCommentHeadView.m */; };
+		4C5493A22A17B810005F7D66 /* AXArticleCommentItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5493A12A17B810005F7D66 /* AXArticleCommentItemCell.m */; };
+		4C5493A52A17BDA1005F7D66 /* ZCArticleWebCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5493A42A17BDA1005F7D66 /* ZCArticleWebCell.m */; };
+		4C5493A82A17C490005F7D66 /* AXArticleCommentFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5493A72A17C490005F7D66 /* AXArticleCommentFooterView.m */; };
 		4C5E53532A145B0700A8D104 /* ZCMineManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E53522A145B0700A8D104 /* ZCMineManage.m */; };
 		4C5E53562A1461CA00A8D104 /* AXUserBindItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E53552A1461CA00A8D104 /* AXUserBindItemCell.m */; };
 		4C9B6E2E29E8210D0007BDB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B6E2D29E8210D0007BDB5 /* AppDelegate.m */; };
@@ -137,6 +143,18 @@
 		4C5493922A177A9D005F7D66 /* AXChangeFlowDeviceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXChangeFlowDeviceCell.m; sourceTree = "<group>"; };
 		4C5493942A177C86005F7D66 /* AXChangeFlowOperatorDeviceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXChangeFlowOperatorDeviceCell.h; sourceTree = "<group>"; };
 		4C5493952A177C86005F7D66 /* AXChangeFlowOperatorDeviceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXChangeFlowOperatorDeviceCell.m; sourceTree = "<group>"; };
+		4C5493972A17AA18005F7D66 /* AXConsultationDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXConsultationDetailController.h; sourceTree = "<group>"; };
+		4C5493982A17AA18005F7D66 /* AXConsultationDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXConsultationDetailController.m; sourceTree = "<group>"; };
+		4C54939A2A17AED9005F7D66 /* AXArticleDetailHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXArticleDetailHeadView.h; sourceTree = "<group>"; };
+		4C54939B2A17AED9005F7D66 /* AXArticleDetailHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXArticleDetailHeadView.m; sourceTree = "<group>"; };
+		4C54939D2A17B550005F7D66 /* AXArticleCommentHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXArticleCommentHeadView.h; sourceTree = "<group>"; };
+		4C54939E2A17B550005F7D66 /* AXArticleCommentHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXArticleCommentHeadView.m; sourceTree = "<group>"; };
+		4C5493A02A17B810005F7D66 /* AXArticleCommentItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXArticleCommentItemCell.h; sourceTree = "<group>"; };
+		4C5493A12A17B810005F7D66 /* AXArticleCommentItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXArticleCommentItemCell.m; sourceTree = "<group>"; };
+		4C5493A32A17BDA1005F7D66 /* ZCArticleWebCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCArticleWebCell.h; sourceTree = "<group>"; };
+		4C5493A42A17BDA1005F7D66 /* ZCArticleWebCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCArticleWebCell.m; sourceTree = "<group>"; };
+		4C5493A62A17C490005F7D66 /* AXArticleCommentFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXArticleCommentFooterView.h; sourceTree = "<group>"; };
+		4C5493A72A17C490005F7D66 /* AXArticleCommentFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXArticleCommentFooterView.m; sourceTree = "<group>"; };
 		4C5E53512A145B0700A8D104 /* ZCMineManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCMineManage.h; sourceTree = "<group>"; };
 		4C5E53522A145B0700A8D104 /* ZCMineManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCMineManage.m; sourceTree = "<group>"; };
 		4C5E53542A1461CA00A8D104 /* AXUserBindItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUserBindItemCell.h; sourceTree = "<group>"; };
@@ -423,6 +441,16 @@
 				4CC92F0F2A121D8800948B1C /* AXHomeItemCharCell.m */,
 				4CC92F112A121E4A00948B1C /* AXHomeItemPictureView.h */,
 				4CC92F122A121E4A00948B1C /* AXHomeItemPictureView.m */,
+				4C54939A2A17AED9005F7D66 /* AXArticleDetailHeadView.h */,
+				4C54939B2A17AED9005F7D66 /* AXArticleDetailHeadView.m */,
+				4C5493A32A17BDA1005F7D66 /* ZCArticleWebCell.h */,
+				4C5493A42A17BDA1005F7D66 /* ZCArticleWebCell.m */,
+				4C54939D2A17B550005F7D66 /* AXArticleCommentHeadView.h */,
+				4C54939E2A17B550005F7D66 /* AXArticleCommentHeadView.m */,
+				4C5493A02A17B810005F7D66 /* AXArticleCommentItemCell.h */,
+				4C5493A12A17B810005F7D66 /* AXArticleCommentItemCell.m */,
+				4C5493A62A17C490005F7D66 /* AXArticleCommentFooterView.h */,
+				4C5493A72A17C490005F7D66 /* AXArticleCommentFooterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -579,6 +607,8 @@
 			children = (
 				4CFFB0962A0211E700E3C814 /* ZCHomeController.h */,
 				4CFFB0972A0211E700E3C814 /* ZCHomeController.m */,
+				4C5493972A17AA18005F7D66 /* AXConsultationDetailController.h */,
+				4C5493982A17AA18005F7D66 /* AXConsultationDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -896,6 +926,7 @@
 				4C1B8AC12A13631E0051491F /* AXFlowDonwHeadView.m in Sources */,
 				4C1B8AD12A138E020051491F /* AXBindCardHeadView.m in Sources */,
 				4CFFB0A72A02124400E3C814 /* ZCMyController.m in Sources */,
+				4C5493A22A17B810005F7D66 /* AXArticleCommentItemCell.m in Sources */,
 				4CFFB0702A020A8300E3C814 /* UIButton+Extra.m in Sources */,
 				4CFFB0D22A02627600E3C814 /* ZCLoginManage.m in Sources */,
 				4CFFB07D2A020DE300E3C814 /* ZCBaseNavController.m in Sources */,
@@ -910,6 +941,7 @@
 				4C9B6E2E29E8210D0007BDB5 /* AppDelegate.m in Sources */,
 				4CC92F042A1214FB00948B1C /* AXHomeSearchView.m in Sources */,
 				4CA998222A14D108004906CC /* MMScanViewController.m in Sources */,
+				4C5493A82A17C490005F7D66 /* AXArticleCommentFooterView.m in Sources */,
 				4CFFB06D2A020A8300E3C814 /* NSDate+Extension.m in Sources */,
 				4CC92F132A121E4A00948B1C /* AXHomeItemPictureView.m in Sources */,
 				4CFFB0782A020BB000E3C814 /* ZCDevice.m in Sources */,
@@ -919,10 +951,12 @@
 				4C1B8ACE2A1387D30051491F /* AXMyBaseFuncCell.m in Sources */,
 				4C1B8AB52A131D040051491F /* AXFlowDateView.m in Sources */,
 				4CFFB0912A02107000E3C814 /* ZCRegisterController.m in Sources */,
+				4C5493A52A17BDA1005F7D66 /* ZCArticleWebCell.m in Sources */,
 				4CFFB0CA2A0261B600E3C814 /* CFFHud.m in Sources */,
 				4CFFB09D2A02120300E3C814 /* ZCShopController.m in Sources */,
 				4C5493932A177A9D005F7D66 /* AXChangeFlowDeviceCell.m in Sources */,
 				4CFFB06C2A020A8300E3C814 /* UIColor+Color.m in Sources */,
+				4C54939C2A17AED9005F7D66 /* AXArticleDetailHeadView.m in Sources */,
 				4C1B8AC42A1367EE0051491F /* AXFlowDownItemCell.m in Sources */,
 				4CC92F012A12013600948B1C /* AXHomeItemView.m in Sources */,
 				4CC92F072A121D1C00948B1C /* AXHomeItemMulPictureCell.m in Sources */,
@@ -934,10 +968,12 @@
 				4CFFB0B32A0217E800E3C814 /* UIResponder+HBRouter.m in Sources */,
 				4C1B8ACB2A137B460051491F /* AXTitleLabelView.m in Sources */,
 				4CFFB0812A020E9300E3C814 /* ZCConfigColor.m in Sources */,
+				4C54939F2A17B550005F7D66 /* AXArticleCommentHeadView.m in Sources */,
 				4CFFB06F2A020A8300E3C814 /* NSString+ZCHelper.m in Sources */,
 				4CFFB07E2A020DE300E3C814 /* ZCBaseViewController.m in Sources */,
 				4CFFB0CC2A0261B600E3C814 /* CFFAlertView.m in Sources */,
 				4C1B8AC82A1375B70051491F /* AXMyTopView.m in Sources */,
+				4C5493992A17AA18005F7D66 /* AXConsultationDetailController.m in Sources */,
 				4C1B8AD72A13928E0051491F /* AXAlertView.m in Sources */,
 				4CFFB06E2A020A8300E3C814 /* UIImage+Exta.m in Sources */,
 				4C54938D2A1730E4005F7D66 /* AXChangeFlowCardCell.m in Sources */,

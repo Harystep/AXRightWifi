@@ -14,6 +14,12 @@
 #define kQueryHomeSubCategoryListInfo @"api/rf-article/article/list"////获取首页子分类
 //@"api/rf-article/article-cate/cate-child?pid="
 
+#define kQueryArticleDetailInfo @"api/rf-article/article/view?id="//获取资讯详情
+
+#define kQueryArticleCommentListInfo @"api/rf-article/article/evaluate"// 获取资讯评论
+
+#define kCommentArticleOperateInfo @"api/rf-article/article/evaluate-add"//
+
 @implementation ZCHomeManage
 
 
@@ -47,6 +53,46 @@
 + (void)queryHomeSubCategoryListInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler {
     [[ZCNetwork shareInstance] request_getWithApi:kQueryHomeSubCategoryListInfo params:params isNeedSVP:YES success:^(id  _Nullable responseObj) {
       
+        completerHandler(responseObj);
+    } failed:^(id  _Nullable data) {
+        if([data isKindOfClass:[NSDictionary class]]) {
+            [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(data[@"message"])];
+        } else {
+            [[CFFAlertView sharedInstance] showTextMsg:@"网络连接异常"];
+        }
+    }];
+}
+
+//kQueryArticleDetailInfo
++ (void)queryArticleDetailInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler {
+    NSString *url = [NSString stringWithFormat:@"%@%@", kQueryArticleDetailInfo, params[@"id"]];
+    [[ZCNetwork shareInstance] request_getWithApi:url params:@{} isNeedSVP:YES success:^(id  _Nullable responseObj) {
+        completerHandler(responseObj);
+    } failed:^(id  _Nullable data) {
+        if([data isKindOfClass:[NSDictionary class]]) {
+            [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(data[@"message"])];
+        } else {
+            [[CFFAlertView sharedInstance] showTextMsg:@"网络连接异常"];
+        }
+    }];
+}
+
+//
++ (void)queryArticleCommentListInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler {    
+    [[ZCNetwork shareInstance] request_getWithApi:kQueryArticleCommentListInfo params:params isNeedSVP:NO success:^(id  _Nullable responseObj) {
+        completerHandler(responseObj);
+    } failed:^(id  _Nullable data) {
+        if([data isKindOfClass:[NSDictionary class]]) {
+            [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(data[@"message"])];
+        } else {
+            [[CFFAlertView sharedInstance] showTextMsg:@"网络连接异常"];
+        }
+    }];
+}
+
+//
++ (void)commentArticleOperateInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler {
+    [[ZCNetwork shareInstance] request_postWithApi:kCommentArticleOperateInfo params:params isNeedSVP:YES success:^(id  _Nullable responseObj) {
         completerHandler(responseObj);
     } failed:^(id  _Nullable data) {
         if([data isKindOfClass:[NSDictionary class]]) {

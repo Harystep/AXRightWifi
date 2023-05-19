@@ -8,5 +8,7 @@
 	<string>ZCRegisterController</string>
 	<key>AddCardDevice</key>
 	<string>AXAddCardDeviceController</string>
+	<key>ConsultationDetail</key>
+	<string>AXConsultationDetailController</string>
 </dict>
 </plist>

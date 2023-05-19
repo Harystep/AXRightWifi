@@ -92,10 +92,10 @@
         AVPlayerViewController *playerVc = [[AVPlayerViewController alloc] init];
         playerVc.player = player;
         playerVc.title  = checkSafeContent(dataDic[@"title"]);
-//        [self.superViewController.navigationController pushViewController:playerVc animated:YES];
         [self.superViewController presentViewController:playerVc animated:YES completion:nil];
+    } else {
+        [HCRouter router:@"ConsultationDetail" params:@{@"id":checkSafeContent(dataDic[@"id"])} viewController:self.superViewController animated:YES];
     }
-    
 }
 
 - (void)setIndex:(NSInteger)index {
