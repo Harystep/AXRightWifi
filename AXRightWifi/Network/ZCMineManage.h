@@ -35,6 +35,12 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - completerHandler: <#completerHandler description#>
 + (void)bindUserDeviceOperateURL:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
 
+/// 切换运营商
+/// - Parameters:
+///   - params: <#params description#>
+///   - completerHandler: <#completerHandler description#>
++ (void)changeDeviceOperatorURL:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
+
 @end
 
 NS_ASSUME_NONNULL_END

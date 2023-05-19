@@ -109,7 +109,7 @@
 
 - (void)bindDeviceOperate {
     [ZCMineManage bindUserDeviceOperateURL:@{@"iccid":checkSafeContent(self.numF.text)} completeHandler:^(id  _Nonnull responseObj) {
-        [CFFHud showErrorWithTitle:checkSafeContent(responseObj[@"message"])];
+        [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(responseObj[@"message"])];
         if(self.callBackBlock) {
             self.callBackBlock(@"");
         }

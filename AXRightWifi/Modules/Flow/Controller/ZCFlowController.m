@@ -10,6 +10,9 @@
 #import "AXFlowRewardItemCell.h"
 #import "AXFlowDownItemCell.h"
 #import "AXFlowDonwHeadView.h"
+#import "AXChangeCardView.h"
+#import "AXChangeFlowCardAlertView.h"
+#import "AXChangeFlowDeviceAlertView.h"
 
 @interface ZCFlowController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -23,9 +26,19 @@
 
 @property (nonatomic,strong) AXFlowDonwHeadView *downHeadView;
 
+@property (nonatomic,strong) NSMutableArray *dataArr;
+
+@property (nonatomic,strong) NSArray *deviceArr;
+
 @end
 
 @implementation ZCFlowController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self getUserBindCardYiListInfo];
+    [self getUserBindDeviceListInfo];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,35 +59,6 @@
     [self getDownListInfo];
         
     [self getCurrentOperatorInfo];
-}
-
-//將16進制的字符串轉換成NSData(bytes)
-- (NSMutableData *)convertHexStrToData:(NSString *)str {
-    if (!str || [str length] == 0) {
-        return nil;
-    }
-    
-    NSMutableData *hexData = [[NSMutableData alloc] initWithCapacity:8];
-    NSRange range;
-    if ([str length] %2 == 0) {
-        range = NSMakeRange(0,2);
-    } else {
-        range = NSMakeRange(0,1);
-    }
-    for (NSInteger i = range.location; i < [str length]; i += 2) {
-        unsigned int anInt;
-        NSString *hexCharStr = [str substringWithRange:range];
-        NSScanner *scanner = [[NSScanner alloc] initWithString:hexCharStr];
-        
-        [scanner scanHexInt:&anInt];
-        NSData *entity = [[NSData alloc] initWithBytes:&anInt length:1];
-        [hexData appendData:entity];
-        
-        range.location += range.length;
-        range.length = 2;
-    }
-  
-    return hexData;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -152,7 +136,7 @@
 
 - (void)getRewardListInfo {
     [ZCFlowManage getFlowRewardListInfoURL:@{} completeHandler:^(id  _Nonnull responseObj) {
-        NSLog(@"reward:%@", responseObj);
+//        NSLog(@"reward:%@", responseObj);
         self.rewardArr = [ZCBaseDataTool convertSafeArray:responseObj[@"data"]];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -162,7 +146,7 @@
 
 - (void)getDownListInfo {
     [ZCFlowManage getFlowDownListInfoURL:@{} completeHandler:^(id  _Nonnull responseObj) {
-        NSLog(@"down:%@", responseObj);
+//        NSLog(@"down:%@", responseObj);
         self.downArr = [ZCBaseDataTool convertSafeArray:responseObj[@"data"]];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -172,16 +156,50 @@
 
 - (void)getTodayFlowInfo {
     [ZCFlowManage getTodayFlowInfoURL:@{} completeHandler:^(id  _Nonnull responseObj) {
+        NSLog(@"today:%@", responseObj);
         dispatch_async(dispatch_get_main_queue(), ^{
             self.dataView.dataDic = responseObj[@"data"];
         });
     }];
 }
 
+/// 获取卡
+- (void)getUserBindCardYiListInfo {
+    self.dataArr = [NSMutableArray array];
+    [ZCMineManage getUserBindInfoURL:@{@"sim_card_type":@"1", @"master_service_type":@"1"} completeHandler:^(id  _Nonnull responseObj) {
+//        NSLog(@"yidong:%@", responseObj);
+        [self.dataArr addObject:checkSafeArray(responseObj[@"data"])];
+        [self getUserBindCardUnionListInfo];
+    }];
+}
+/// 获取联通的卡
+- (void)getUserBindCardUnionListInfo {
+    [ZCMineManage getUserBindInfoURL:@{@"sim_card_type":@"1", @"master_service_type":@"2"} completeHandler:^(id  _Nonnull responseObj) {
+//        NSLog(@"union:%@", responseObj);
+        [self.dataArr addObject:checkSafeArray(responseObj[@"data"])];
+        [self getUserBindCardDianListInfo];
+    }];
+}
+/// 获取电信的卡
+- (void)getUserBindCardDianListInfo {
+    [ZCMineManage getUserBindInfoURL:@{@"sim_card_type":@"1", @"master_service_type":@"3"} completeHandler:^(id  _Nonnull responseObj) {
+//        NSLog(@"dianxin:%@", responseObj);
+        [self.dataArr addObject:checkSafeArray(responseObj[@"data"])];
+    }];
+}
+
+/// 获取设备
+- (void)getUserBindDeviceListInfo {
+    [ZCMineManage getUserBindInfoURL:@{@"sim_card_type":@"2"} completeHandler:^(id  _Nonnull responseObj) {
+//        NSLog(@"device:%@", responseObj);
+        self.deviceArr = checkSafeArray(responseObj[@"data"]);
+    }];
+}
+
 - (void)getCurrentOperatorInfo {
     [ZCFlowManage getCurrentOperatorFlowInfoURL:@{} completeHandler:^(id  _Nonnull responseObj) {
         NSArray *dataArr = checkSafeArray(responseObj[@"data"]);
-        NSLog(@"%@", dataArr);
+//        NSLog(@"%@", dataArr);
         for (NSDictionary *itemDic in dataArr) {
             if([itemDic[@"is_default"] integerValue] == 1) {
                 NSDictionary *fisrtDic = itemDic;
@@ -196,8 +214,60 @@
 
 - (void)routerWithEventName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {
     if([eventName isEqualToString:@"change"]) {//切换卡片
-        
+        AXChangeCardView *alertView = [[AXChangeCardView alloc] init];        
+        [alertView showContentView];
+        kweakself(self);
+        alertView.bindDeviceOperate = ^{//切换卡片
+            [weakself changeCardView];
+        };
+        alertView.knowDeviceInfoOperate = ^{//切换设备
+            [weakself changeDeviceView];
+        };
     }
+}
+
+- (void)changeDeviceView {
+    AXChangeFlowDeviceAlertView *alertView = [[AXChangeFlowDeviceAlertView alloc] init];
+    [alertView showContentView];
+    alertView.dataArr = self.deviceArr;
+    kweakself(self);
+    alertView.knowDeviceInfoOperate = ^(NSDictionary * _Nonnull dic) {
+        [weakself changeDeviceOperator:dic];
+    };
+    alertView.bindDeviceOperate = ^{//添加设备
+        [weakself jumpAddCardOp];
+    };
+}
+
+- (void)changeCardView {
+    AXChangeFlowCardAlertView *alertView = [[AXChangeFlowCardAlertView alloc] init];
+    [alertView showContentView];    
+    alertView.dataArr = self.dataArr;
+    kweakself(self);
+    alertView.knowDeviceInfoOperate = ^(NSDictionary * _Nonnull dic) {
+        [weakself changeDeviceOperator:dic];
+    };
+    alertView.bindDeviceOperate = ^{//添加流量卡
+        [weakself jumpAddCardOp];
+    };
+}
+
+- (void)jumpAddCardOp {
+    [HCRouter router:@"AddCardDevice" params:@{} viewController:self animated:YES block:^(id  _Nonnull value) {
+        [self getUserBindCardYiListInfo];
+        [self getUserBindDeviceListInfo];
+    }];
+}
+
+- (void)changeDeviceOperator:(NSDictionary *)dataDic {
+    NSString *master_service_type = checkSafeContent(dataDic[@"master_service_type"]);
+    NSString *sim_card_type = checkSafeContent(dataDic[@"sim_card_type"]);
+    NSString *iccid = checkSafeContent(dataDic[@"iccid"]);
+    [ZCMineManage changeDeviceOperatorURL:@{@"master_service_type":master_service_type, @"sim_card_type":sim_card_type, @"iccid":iccid} completeHandler:^(id  _Nonnull responseObj) {
+        [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(responseObj[@"message"])];
+        [self getCurrentOperatorInfo];
+        [self getTodayFlowInfo];
+    }];
 }
 
 - (UITableView *)tableView {

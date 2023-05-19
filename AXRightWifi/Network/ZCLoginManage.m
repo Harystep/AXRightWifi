@@ -21,9 +21,9 @@
         completerHandler(responseObj);
     } failed:^(id  _Nullable data) {
         if([data isKindOfClass:[NSDictionary class]]) {
-            [CFFHud showErrorWithTitle:checkSafeContent(data[@"message"])];
+            [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(data[@"message"])];
         } else {
-            [CFFHud showErrorWithTitle:@"网络连接异常"];
+            [[CFFAlertView sharedInstance] showTextMsg:@"网络连接异常"];
         }
     }];
 }
@@ -39,9 +39,9 @@
         completerHandler(responseObj);        
     } failed:^(id  _Nullable data) {
         if([data isKindOfClass:[NSDictionary class]]) {
-            [CFFHud showErrorWithTitle:checkSafeContent(data[@"message"])];
+            [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(data[@"message"])];
         } else {
-            [CFFHud showErrorWithTitle:@"网络连接异常"];
+            [[CFFAlertView sharedInstance] showTextMsg:@"网络连接异常"];
         }
     }];
 }
@@ -58,9 +58,9 @@
         completerHandler(responseObj);
     } failed:^(id  _Nullable data) {
         if([data isKindOfClass:[NSDictionary class]]) {
-            [CFFHud showErrorWithTitle:checkSafeContent(data[@"message"])];
+            [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(data[@"message"])];
         } else {
-            [CFFHud showErrorWithTitle:@"网络连接异常"];
+            [[CFFAlertView sharedInstance] showTextMsg:@"网络连接异常"];
         }
     }];
 }
@@ -78,9 +78,9 @@
         completerHandler(responseObj);
     } failed:^(id  _Nullable data) {
         if([data isKindOfClass:[NSDictionary class]]) {
-            [CFFHud showErrorWithTitle:checkSafeContent(data[@"message"])];
+            [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(data[@"message"])];
         } else {
-            [CFFHud showErrorWithTitle:@"网络连接异常"];
+            [[CFFAlertView sharedInstance] showTextMsg:@"网络连接异常"];
         }
     }];
 }

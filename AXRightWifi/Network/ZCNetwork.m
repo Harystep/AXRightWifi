@@ -88,8 +88,8 @@ static ZCNetwork *instanceManager = nil;
             [self printRequestData:task reoponseObject:responseObject];
             [self handleResultWithModelClass:isNeed success:success failed:failed reponseObj:responseObject];
             
-        } else {
-            [CFFHud showErrorWithTitle:@"请求超时"];
+        } else {            
+            [[CFFAlertView sharedInstance] showTextMsg:@"请求超时"];
         }
     }];
     [task resume];

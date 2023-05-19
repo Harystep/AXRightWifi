@@ -33,7 +33,11 @@ static CFFAlertView *_instance;
 }
 
 - (void)showTextMsg:(NSString *)content {
-    [self showTextMsg:content dispaly:5.0];
+    if(checkSafeContent(content).length > 0) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showTextMsg:content dispaly:2.0];
+        });
+    }
 }
 
 - (void)showTextMsg:(NSString *)content dispaly:(NSInteger)secord {
@@ -55,7 +59,7 @@ static CFFAlertView *_instance;
     
     dispatch_async(dispatch_get_main_queue(), ^{
         titleL.frame = CGRectMake(4, 10, contentSize.width + 4, contentSize.height + 4);
-        _instance.frame = CGRectMake((kWidth - contentSize.width - 4 - 8)/2, kHeight - contentSize.height - AUTO_MARGIN(60), contentSize.width + 4 + 8, contentSize.height + 24);
+        _instance.frame = CGRectMake((kWidth - contentSize.width - 4 - 8)/2, (kHeight - contentSize.height)/2.0, contentSize.width + 4 + 8, contentSize.height + 24);
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(secord * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

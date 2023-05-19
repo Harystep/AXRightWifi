@@ -37,6 +37,7 @@
 #import "CFFHud.h"
 #import "AXAlertView.h"
 #import "ZCBaseDataTool.h"
+#import "CFFAlertView.h"
 
 #import "ZCBaseViewController.h"
 #import "ZCBaseNavController.h"
