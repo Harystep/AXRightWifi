@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SYBPictureView : UIView
 
+@property (nonatomic,assign) BOOL assignVideoType;//标记是否是视频类型
+
 @property (nonatomic,strong) UIColor *bgColor;
 
 @property (nonatomic,strong) NSArray *imageArr;

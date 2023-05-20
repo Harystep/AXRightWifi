@@ -40,6 +40,19 @@ NS_ASSUME_NONNULL_BEGIN
                    success:(CompleteHandler)success
                      failed:(FaildureHandler)failed;
 
+
+- (void)request_uploadWithApi:(NSString *)api
+                       data:(nullable id)data
+                       isNeedSVP:(BOOL)isNeed
+                      success:(CompleteHandler)success
+                        failed:(FaildureHandler)failed;
+
+- (void)request_uploadVideoWithApi:(NSString *)api
+                       data:(nullable id)data
+                       isNeedSVP:(BOOL)isNeed
+                      success:(CompleteHandler)success
+                        failed:(FaildureHandler)failed;
+
 @end
 
 NS_ASSUME_NONNULL_END

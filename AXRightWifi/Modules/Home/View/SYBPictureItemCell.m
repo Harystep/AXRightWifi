@@ -75,12 +75,16 @@
     }
 }
 
+- (void)setIndex:(NSInteger)index {
+    _index = index;
+}
+
 - (void)setMaxFlag:(NSInteger)maxFlag {
     _maxFlag = maxFlag;
 }
 
 - (void)delImageOperate {
-    [self routerWithEventName:@"delete" userInfo:@{@"data":self.imageData}];
+    [self routerWithEventName:@"delete" userInfo:@{@"data":self.imageData, @"index":[NSString stringWithFormat:@"%tu", self.index]}];
 }
 
 

@@ -31,6 +31,10 @@
     }];
 }
 
+- (void)setAssignVideoType:(BOOL)assignVideoType {
+    _assignVideoType = assignVideoType;
+}
+
 - (void)setImageArr:(NSArray *)imageArr {
     _imageArr = imageArr;    
     [self.collectView reloadData];
@@ -38,13 +42,17 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-    return self.imageArr.count<9?self.imageArr.count+1:9;
+    if(self.assignVideoType) {
+        return 1;
+    } else {
+        return self.imageArr.count<9?self.imageArr.count+1:9;
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     SYBPictureItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SYBPictureItemCell" forIndexPath:indexPath];
+    cell.index = indexPath.row;
     if (indexPath.row == self.imageArr.count) {
         cell.maxFlag = YES;
         cell.imageData = @"";

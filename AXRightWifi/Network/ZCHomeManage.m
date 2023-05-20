@@ -24,6 +24,8 @@
 
 #define kUploadVideoOperateInfo @"api/tiny-shop/v1/common/file/videos"//上传视频
 
+#define kPublishArticleOperateInfo @"api/rf-article/article/create"//发布文章
+
 @implementation ZCHomeManage
 
 
@@ -97,6 +99,43 @@
 //
 + (void)commentArticleOperateInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler {
     [[ZCNetwork shareInstance] request_postWithApi:kCommentArticleOperateInfo params:params isNeedSVP:YES success:^(id  _Nullable responseObj) {
+        completerHandler(responseObj);
+    } failed:^(id  _Nullable data) {
+        if([data isKindOfClass:[NSDictionary class]]) {
+            [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(data[@"message"])];
+        } else {
+            [[CFFAlertView sharedInstance] showTextMsg:@"网络连接异常"];
+        }
+    }];
+}
+
++ (void)uploadPictureOperateInfo:(id)data completeHandler:(void (^)(id responseObj))completerHandler {
+    [[ZCNetwork shareInstance] request_uploadWithApi:kUploadPictureOperateInfo data:data isNeedSVP:YES success:^(id  _Nullable responseObj) {
+        completerHandler(responseObj);
+    } failed:^(id  _Nullable data) {
+        if([data isKindOfClass:[NSDictionary class]]) {
+            [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(data[@"message"])];
+        } else {
+            [[CFFAlertView sharedInstance] showTextMsg:@"网络连接异常"];
+        }
+    }];
+}
+
++ (void)uploadVideoOperateInfo:(id)data completeHandler:(void (^)(id responseObj))completerHandler {
+    [[ZCNetwork shareInstance] request_uploadVideoWithApi:kUploadVideoOperateInfo data:data isNeedSVP:YES success:^(id  _Nullable responseObj) {
+        completerHandler(responseObj);
+    } failed:^(id  _Nullable data) {
+        if([data isKindOfClass:[NSDictionary class]]) {
+            [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(data[@"message"])];
+        } else {
+            [[CFFAlertView sharedInstance] showTextMsg:@"网络连接异常"];
+        }
+    }];
+}
+
+//
++ (void)publishArticleOperateInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler {
+    [[ZCNetwork shareInstance] request_postWithApi:kPublishArticleOperateInfo params:params isNeedSVP:YES success:^(id  _Nullable responseObj) {
         completerHandler(responseObj);
     } failed:^(id  _Nullable data) {
         if([data isKindOfClass:[NSDictionary class]]) {

@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SYBPictureItemCell : UICollectionViewCell
 
+@property (nonatomic,assign) NSInteger index;
 /// 是否满九个
 @property (nonatomic, assign) NSInteger maxFlag;
 

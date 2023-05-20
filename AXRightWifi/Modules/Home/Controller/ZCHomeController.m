@@ -78,7 +78,12 @@
 
 #pragma mark - 发布文章
 - (void)postOperate {
-    [HCRouter router:@"PostAcrticle" params:@{} viewController:self animated:YES];
+    kweakself(self);
+    [HCRouter router:@"PostAcrticle" params:@{@"data":checkSafeArray(self.dataArr)} viewController:self animated:YES block:^(id  _Nonnull value) {
+        NSDictionary *dic = weakself.dataArr[weakself.pageIndex];
+        weakself.searchView.contentF.text = weakself.keyArr[weakself.pageIndex];
+        [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"kProductCategoryIndex%tu", self.pageIndex] object:@{@"id":checkSafeContent(dic[@"id"]), @"content":checkSafeContent(weakself.keyArr[self.pageIndex])}];
+    }];
 }
 
 - (void)showFilterContentView {
@@ -94,6 +99,7 @@
 }
 
 - (void)queryHomeBannerInfo {
+    
     [ZCHomeManage queryHomeBannerListInfo:@{} completeHandler:^(id  _Nonnull responseObj) {
         
     }];

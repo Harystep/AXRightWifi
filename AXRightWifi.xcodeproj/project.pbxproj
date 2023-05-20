@@ -39,6 +39,9 @@
 		4C1B8AD12A138E020051491F /* AXBindCardHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8AD02A138E020051491F /* AXBindCardHeadView.m */; };
 		4C1B8AD42A138E0F0051491F /* AXBindCardFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8AD32A138E0F0051491F /* AXBindCardFooterView.m */; };
 		4C1B8AD72A13928E0051491F /* AXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B8AD62A13928E0051491F /* AXAlertView.m */; };
+		4C4456D22A18A450004D2BDC /* MovEncodeToMpegTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4456D12A18A450004D2BDC /* MovEncodeToMpegTool.m */; };
+		4C4456D52A18B418004D2BDC /* AXArticlrCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4456D42A18B418004D2BDC /* AXArticlrCategoryView.m */; };
+		4C4456D82A18B4BA004D2BDC /* AXArticleCategoryFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4456D62A18B4BA004D2BDC /* AXArticleCategoryFilterView.m */; };
 		4C54938A2A170ED7005F7D66 /* AXChangeFlowCardAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5493892A170ED7005F7D66 /* AXChangeFlowCardAlertView.m */; };
 		4C54938D2A1730E4005F7D66 /* AXChangeFlowCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C54938C2A1730E4005F7D66 /* AXChangeFlowCardCell.m */; };
 		4C5493902A17788E005F7D66 /* AXChangeFlowDeviceAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C54938F2A17788E005F7D66 /* AXChangeFlowDeviceAlertView.m */; };
@@ -189,6 +192,12 @@
 		4C1B8AD32A138E0F0051491F /* AXBindCardFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXBindCardFooterView.m; sourceTree = "<group>"; };
 		4C1B8AD52A13928E0051491F /* AXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXAlertView.h; sourceTree = "<group>"; };
 		4C1B8AD62A13928E0051491F /* AXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXAlertView.m; sourceTree = "<group>"; };
+		4C4456D02A18A450004D2BDC /* MovEncodeToMpegTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovEncodeToMpegTool.h; sourceTree = "<group>"; };
+		4C4456D12A18A450004D2BDC /* MovEncodeToMpegTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovEncodeToMpegTool.m; sourceTree = "<group>"; };
+		4C4456D32A18B418004D2BDC /* AXArticlrCategoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXArticlrCategoryView.h; sourceTree = "<group>"; };
+		4C4456D42A18B418004D2BDC /* AXArticlrCategoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXArticlrCategoryView.m; sourceTree = "<group>"; };
+		4C4456D62A18B4BA004D2BDC /* AXArticleCategoryFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXArticleCategoryFilterView.m; sourceTree = "<group>"; };
+		4C4456D72A18B4BA004D2BDC /* AXArticleCategoryFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXArticleCategoryFilterView.h; sourceTree = "<group>"; };
 		4C5493882A170ED7005F7D66 /* AXChangeFlowCardAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXChangeFlowCardAlertView.h; sourceTree = "<group>"; };
 		4C5493892A170ED7005F7D66 /* AXChangeFlowCardAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXChangeFlowCardAlertView.m; sourceTree = "<group>"; };
 		4C54938B2A1730E4005F7D66 /* AXChangeFlowCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXChangeFlowCardCell.h; sourceTree = "<group>"; };
@@ -547,6 +556,10 @@
 				4C18B3622A185F9400C580AF /* SYBPictureView.m */,
 				4C18B3942A18621A00C580AF /* SYBPictureItemCell.h */,
 				4C18B3952A18621A00C580AF /* SYBPictureItemCell.m */,
+				4C4456D32A18B418004D2BDC /* AXArticlrCategoryView.h */,
+				4C4456D42A18B418004D2BDC /* AXArticlrCategoryView.m */,
+				4C4456D72A18B4BA004D2BDC /* AXArticleCategoryFilterView.h */,
+				4C4456D62A18B4BA004D2BDC /* AXArticleCategoryFilterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -585,6 +598,8 @@
 				4C1B8ABA2A1336040051491F /* ZCFlowManage.m */,
 				4C5E53512A145B0700A8D104 /* ZCMineManage.h */,
 				4C5E53522A145B0700A8D104 /* ZCMineManage.m */,
+				4C4456D02A18A450004D2BDC /* MovEncodeToMpegTool.h */,
+				4C4456D12A18A450004D2BDC /* MovEncodeToMpegTool.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1063,6 +1078,7 @@
 				4C1B8ACE2A1387D30051491F /* AXMyBaseFuncCell.m in Sources */,
 				4C1B8AB52A131D040051491F /* AXFlowDateView.m in Sources */,
 				4CFFB0912A02107000E3C814 /* ZCRegisterController.m in Sources */,
+				4C4456D52A18B418004D2BDC /* AXArticlrCategoryView.m in Sources */,
 				4C18B3902A185FE800C580AF /* TZGifPhotoPreviewController.m in Sources */,
 				4C5493A52A17BDA1005F7D66 /* ZCArticleWebCell.m in Sources */,
 				4CFFB0CA2A0261B600E3C814 /* CFFHud.m in Sources */,
@@ -1084,10 +1100,12 @@
 				4C1B8ABB2A1336040051491F /* ZCFlowManage.m in Sources */,
 				4CFFB0B32A0217E800E3C814 /* UIResponder+HBRouter.m in Sources */,
 				4C1B8ACB2A137B460051491F /* AXTitleLabelView.m in Sources */,
+				4C4456D22A18A450004D2BDC /* MovEncodeToMpegTool.m in Sources */,
 				4CFFB0812A020E9300E3C814 /* ZCConfigColor.m in Sources */,
 				4C54939F2A17B550005F7D66 /* AXArticleCommentHeadView.m in Sources */,
 				4C18B38F2A185FE800C580AF /* TZLocationManager.m in Sources */,
 				4CFFB06F2A020A8300E3C814 /* NSString+ZCHelper.m in Sources */,
+				4C4456D82A18B4BA004D2BDC /* AXArticleCategoryFilterView.m in Sources */,
 				4CFFB07E2A020DE300E3C814 /* ZCBaseViewController.m in Sources */,
 				4CFFB0CC2A0261B600E3C814 /* CFFAlertView.m in Sources */,
 				4C18B3602A185E7700C580AF /* AXPostAcrticleController.m in Sources */,

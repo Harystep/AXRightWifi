@@ -6,6 +6,7 @@
 //
 
 #import "ZCNetwork.h"
+#import "AXAlertView.h"
 
 #define MAINWINDOW  [UIApplication sharedApplication].keyWindow
 
@@ -164,7 +165,7 @@ static ZCNetwork *instanceManager = nil;
             success(dict);
         } else if([dict[@"code"] integerValue] == CFFApiErrorCode_Token_Expired){
             //token 过期，需要退回到登录页面
-//            [self autoLoginAccount];//刷新token操作
+            [self showAlertLogout];
             return;
         } else {
             failed(dict);
@@ -287,6 +288,93 @@ static ZCNetwork *instanceManager = nil;
         _sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
     }
     return _sessionManager;
+}
+
+- (void)request_uploadWithApi:(NSString *)api
+                       data:(nullable id)data
+                       isNeedSVP:(BOOL)isNeed
+                      success:(CompleteHandler)success
+                       failed:(FaildureHandler)failed {
+    if (isNeed == YES) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD showHUDAddedTo:MAINWINDOW animated:YES];
+        });
+    }
+    //post 请求
+    NSString *url = [[ZCNetwork shareInstance].host stringByAppendingString:api];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"multipart/form-data", @"application/json",
+    nil];
+    [manager POST:url parameters:parameters headers:[self headDic] constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        [formData appendPartWithFileData:data name:@"file" fileName:@"igauge.png" mimeType:@"image/png"];
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        NSLog(@"progress:%@", uploadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (isNeed == YES) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:MAINWINDOW animated:YES];
+            });
+        }
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (isNeed == YES) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:MAINWINDOW animated:YES];
+            });
+        }
+        failed(error);
+    }];
+}
+
+- (void)request_uploadVideoWithApi:(NSString *)api
+                       data:(nullable id)data
+                       isNeedSVP:(BOOL)isNeed
+                      success:(CompleteHandler)success
+                            failed:(FaildureHandler)failed {
+    if (isNeed == YES) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD showHUDAddedTo:MAINWINDOW animated:YES];
+        });
+    }
+    //post 请求
+    NSString *url = [[ZCNetwork shareInstance].host stringByAppendingString:api];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"multipart/form-data", @"application/json", @"application/octet-stream",
+    nil];
+    [manager POST:url parameters:parameters headers:[self headDic] constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        [formData appendPartWithFileData:data name:@"file" fileName:@"ikgc.mp4" mimeType:@"video/mp4"];
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        NSLog(@"progress:%@", uploadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (isNeed == YES) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:MAINWINDOW animated:YES];
+            });
+        }
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (isNeed == YES) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:MAINWINDOW animated:YES];
+            });
+        }
+        failed(error);
+    }];
+}
+
+- (void)showAlertLogout {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        AXAlertView *alertView = [[AXAlertView alloc] init];
+        [alertView showAlertView];
+        alertView.message = @"当前账号已退出登录，请重新登录";
+        alertView.confirmTitle = @"确定";
+        alertView.cancleTitle = @"取消";
+        alertView.confirmBlock = ^{
+            [ZCUserInfo logout];
+        };
+    });
 }
 
 @end

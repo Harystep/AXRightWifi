@@ -40,6 +40,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)commentArticleOperateInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
 
++ (void)uploadPictureOperateInfo:(id)data completeHandler:(void (^)(id responseObj))completerHandler;
+
++ (void)uploadVideoOperateInfo:(id)data completeHandler:(void (^)(id responseObj))completerHandler;
+
+/// 发布文章
+/// - Parameters:
+///   - params: <#params description#>
+///   - completerHandler: <#completerHandler description#>
++ (void)publishArticleOperateInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler;
+
 @end
 
 NS_ASSUME_NONNULL_END
