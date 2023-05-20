@@ -38,6 +38,7 @@
 #import "AXAlertView.h"
 #import "ZCBaseDataTool.h"
 #import "CFFAlertView.h"
+#import "UITextView+Extra.h"
 
 #import "ZCBaseViewController.h"
 #import "ZCBaseNavController.h"

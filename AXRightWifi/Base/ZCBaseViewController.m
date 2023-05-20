@@ -104,6 +104,12 @@
     }];
 }
 
+- (void)rightOperate {
+    if (self.rightItemBlock) {
+        self.rightItemBlock();
+    }
+}
+
 - (UIView *)naviView {
     if (!_naviView) {
         _naviView = [[UIView alloc] init];
@@ -118,6 +124,12 @@
         [self.titleL mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(_naviView.mas_centerX);
             make.centerY.mas_equalTo(self.backBtn);
+        }];
+        [_naviView addSubview:self.rightBtn];
+        [self.rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(_naviView.mas_bottom);
+            make.trailing.mas_equalTo(_naviView.mas_trailing).inset(10);
+            make.height.width.mas_equalTo(44);
         }];
     }
     return _naviView;
@@ -138,6 +150,14 @@
         [_backBtn addTarget:self action:@selector(backOperate) forControlEvents:UIControlEventTouchUpInside];
     }
     return _backBtn;
+}
+
+- (UIButton *)rightBtn {
+    if (!_rightBtn) {
+        _rightBtn = [self.view createSimpleButtonWithTitle:@"" font:15 color:[ZCConfigColor txtColor]];
+        [_rightBtn addTarget:self action:@selector(rightOperate) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _rightBtn;
 }
 
 - (UIButton *)maskBtn {
@@ -174,5 +194,7 @@
     }
     return _noneView;
 }
+
+
 
 @end

@@ -15,7 +15,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if(self == [super initWithFrame:frame]) {
-        
+        self.backgroundColor = [ZCConfigColor whiteColor];
         [self createSubviews];
     }
     return self;

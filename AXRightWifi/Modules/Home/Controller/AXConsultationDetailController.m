@@ -63,7 +63,7 @@ static NSString *reuseWebCell = @"WebCell";
         make.top.mas_equalTo(self.view.mas_top).offset(NAV_BAR_HEIGHT);
         make.bottom.mas_equalTo(self.view.mas_bottom).inset(85);
     }];
-    self.topView = [[AXArticleDetailHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 200)];
+    self.topView = [[AXArticleDetailHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 200)];    
     
     self.commentView = [[AXArticleCommentHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 40)];
     

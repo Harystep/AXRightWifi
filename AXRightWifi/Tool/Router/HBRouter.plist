@@ -10,5 +10,7 @@
 	<string>AXAddCardDeviceController</string>
 	<key>ConsultationDetail</key>
 	<string>AXConsultationDetailController</string>
+	<key>PostAcrticle</key>
+	<string>AXPostAcrticleController</string>
 </dict>
 </plist>

@@ -7,8 +7,7 @@
 
 #import "AXHomeSearchView.h"
 
-@interface AXHomeSearchView ()
-
+@interface AXHomeSearchView ()<UITextFieldDelegate>
 
 
 @end
@@ -42,9 +41,18 @@
         make.leading.mas_equalTo(iconIv.mas_trailing).offset(12);
         make.height.mas_equalTo(30);
     }];
+    self.contentF.returnKeyType = UIReturnKeySearch;
+    self.contentF.delegate = self;
     self.contentF.font = FONT_SYSTEM(14);
     self.contentF.placeholder = @"看文章，领取通用流量";
     
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(self.sureSearchBlock) {
+        self.sureSearchBlock(textField.text);
+    }
+    return YES;
 }
 
 @end

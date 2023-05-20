@@ -18,7 +18,11 @@
 
 #define kQueryArticleCommentListInfo @"api/rf-article/article/evaluate"// 获取资讯评论
 
-#define kCommentArticleOperateInfo @"api/rf-article/article/evaluate-add"//
+#define kCommentArticleOperateInfo @"api/rf-article/article/evaluate-add"//添加评论
+
+#define kUploadPictureOperateInfo @"api/tiny-shop/v1/common/file/images"//上传图片
+
+#define kUploadVideoOperateInfo @"api/tiny-shop/v1/common/file/videos"//上传视频
 
 @implementation ZCHomeManage
 
@@ -51,7 +55,7 @@
 
 //kQueryHomeSubCategoryListInfo
 + (void)queryHomeSubCategoryListInfo:(NSDictionary *)params completeHandler:(void (^)(id responseObj))completerHandler {
-    [[ZCNetwork shareInstance] request_getWithApi:kQueryHomeSubCategoryListInfo params:params isNeedSVP:YES success:^(id  _Nullable responseObj) {
+    [[ZCNetwork shareInstance] request_getWithApi:kQueryHomeSubCategoryListInfo params:params isNeedSVP:NO success:^(id  _Nullable responseObj) {
       
         completerHandler(responseObj);
     } failed:^(id  _Nullable data) {

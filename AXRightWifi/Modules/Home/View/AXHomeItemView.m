@@ -21,6 +21,8 @@
 
 @property (nonatomic,copy) NSString *cate_id;
 
+@property (nonatomic,strong) NSString *key;
+
 @end
 
 @implementation AXHomeItemView
@@ -52,6 +54,8 @@
         [weakself queryAcrtleListInfo];
     }];
     self.tableView.mj_footer.automaticallyChangeAlpha = YES;
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(searchKeyOperate:) name:@"kHoneSearchKey" object:nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -107,14 +111,15 @@
 - (void)queryTypeData:(NSNotification *)noti {
     NSDictionary *dic = noti.object;
     self.cate_id = checkSafeContent(dic[@"id"]);
+    self.key = checkSafeContent(dic[@"content"]);
     self.page = 1;
     [self queryAcrtleListInfo];
 }
 
 - (void)queryAcrtleListInfo {
     //?page=1&pageSize=1&cate_id=&keyword=
-    NSDictionary *parmas = @{@"cate_id":self.cate_id,
-                             @"keyword":@"",
+    NSDictionary *parmas = @{@"cate_id":checkSafeContent(self.cate_id),
+                             @"keyword":checkSafeContent(self.key),
                              @"page":@(self.page),
                              @"pageSize":@"10"
     };

@@ -19,6 +19,7 @@
 @property (nonatomic,strong) NSArray *dataArr;
 @property (nonatomic,strong) UIButton *filterBtn;
 @property (nonatomic,strong) AXHomeSearchView *searchView;
+@property (nonatomic,strong) NSMutableArray *keyArr;
 
 @end
 
@@ -29,6 +30,7 @@
     [super viewDidLoad];
     self.pageIndex = 0;
     self.naviView.hidden = YES;
+    self.keyArr = [NSMutableArray arrayWithArray:@[@"", @"", @"", @""]];
     [self configureNavi];
     
     [self queryHomeTitleListInfo];
@@ -49,6 +51,10 @@
         make.trailing.mas_equalTo(topBg.mas_trailing).inset(50);
         make.height.mas_equalTo(30);
     }];
+    kweakself(self);
+    self.searchView.sureSearchBlock = ^(NSString *content) {
+        [weakself searchOperate:content];
+    };
     
     UIButton *postBtn = [self.view createSimpleButtonWithTitle:@"发布" font:10 color:[ZCConfigColor whiteColor]];
     [topBg addSubview:postBtn];
@@ -62,9 +68,21 @@
     [postBtn dn_layoutButtonEdgeInset:DNEdgeInsetStyleTop space:0];
     [postBtn addTarget:self action:@selector(postOperate) forControlEvents:UIControlEventTouchUpInside];
 }
+
+- (void)searchOperate:(NSString *)content {
+    [self.view endEditing:YES];
+    [self.keyArr replaceObjectAtIndex:self.pageIndex withObject:checkSafeContent(content)];
+    NSDictionary *dic = self.dataArr[self.pageIndex];
+    [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"kProductCategoryIndex%tu", self.pageIndex] object:@{@"id":checkSafeContent(dic[@"id"]), @"content":checkSafeContent(content)}];
+}
+
 #pragma mark - 发布文章
 - (void)postOperate {
-    NSLog(@"hear");
+    [HCRouter router:@"PostAcrticle" params:@{} viewController:self animated:YES];
+}
+
+- (void)showFilterContentView {
+   
 }
 
 - (void)queryHomeTitleListInfo {
@@ -146,10 +164,6 @@
     }];
 }
 
-- (void)showFilterContentView {
-   
-}
-
 - (void)setupScrollView {
     
     self.scrollView = [[UIScrollView alloc] init];
@@ -180,7 +194,8 @@
     NSLog(@"index:%tu", index);
     self.pageIndex = index;
     NSDictionary *dic = self.dataArr[index];
-    [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"kProductCategoryIndex%tu", index] object:@{@"id":checkSafeContent(dic[@"id"])}];
+    self.searchView.contentF.text = self.keyArr[index];
+    [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"kProductCategoryIndex%tu", index] object:@{@"id":checkSafeContent(dic[@"id"]), @"content":checkSafeContent(self.keyArr[index])}];
 }
 
 - (void)configureSubviews {

@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) UITextField *contentF;
 
+@property (nonatomic,strong) void (^sureSearchBlock)(NSString *content);
+
 @end
 
 NS_ASSUME_NONNULL_END

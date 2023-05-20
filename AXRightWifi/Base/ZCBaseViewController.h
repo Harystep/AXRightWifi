@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) UIView *noneView;
 @property (nonatomic,assign) NSInteger signNoneView;
 @property (nonatomic,assign) UINavBackButtonColorStyle backStyle;
+@property (nonatomic,strong) UIButton *rightBtn;
+@property (nonatomic,copy) void (^rightItemBlock)(void);
 
 @property (nonatomic,assign) UINavTitlePostionStyle titlePostionStyle;
 
