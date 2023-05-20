@@ -87,7 +87,10 @@
 }
 
 - (void)showFilterContentView {
-   
+    kweakself(self);
+    [HCRouter router:@"ArticleCategoryFilter" params:@{@"data":checkSafeArray(self.dataArr)} viewController:self block:^(id  _Nonnull value) {
+        [weakself.categoryView selectItemAtIndex:[value integerValue]];
+    }];
 }
 
 - (void)queryHomeTitleListInfo {

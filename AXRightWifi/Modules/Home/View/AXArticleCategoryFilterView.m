@@ -173,6 +173,12 @@
         self.clickLabelResule(self.tagsArr[lb.tag]);
         [self configureNormalView:lb];
     }
+    
+    if(self.clickLabelIndexResule) {
+        ZCContentLabel *lb = (ZCContentLabel *)tap.view;
+        self.clickLabelIndexResule(lb.tag);
+        [self configureNormalView:lb];
+    }
 }
 
 - (void)configureNormalView:(ZCContentLabel *)lb {

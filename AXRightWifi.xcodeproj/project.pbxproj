@@ -42,6 +42,7 @@
 		4C4456D22A18A450004D2BDC /* MovEncodeToMpegTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4456D12A18A450004D2BDC /* MovEncodeToMpegTool.m */; };
 		4C4456D52A18B418004D2BDC /* AXArticlrCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4456D42A18B418004D2BDC /* AXArticlrCategoryView.m */; };
 		4C4456D82A18B4BA004D2BDC /* AXArticleCategoryFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4456D62A18B4BA004D2BDC /* AXArticleCategoryFilterView.m */; };
+		4C4456DB2A18DF05004D2BDC /* ZCArticleCategoryFilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4456DA2A18DF05004D2BDC /* ZCArticleCategoryFilterController.m */; };
 		4C54938A2A170ED7005F7D66 /* AXChangeFlowCardAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5493892A170ED7005F7D66 /* AXChangeFlowCardAlertView.m */; };
 		4C54938D2A1730E4005F7D66 /* AXChangeFlowCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C54938C2A1730E4005F7D66 /* AXChangeFlowCardCell.m */; };
 		4C5493902A17788E005F7D66 /* AXChangeFlowDeviceAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C54938F2A17788E005F7D66 /* AXChangeFlowDeviceAlertView.m */; };
@@ -198,6 +199,8 @@
 		4C4456D42A18B418004D2BDC /* AXArticlrCategoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXArticlrCategoryView.m; sourceTree = "<group>"; };
 		4C4456D62A18B4BA004D2BDC /* AXArticleCategoryFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXArticleCategoryFilterView.m; sourceTree = "<group>"; };
 		4C4456D72A18B4BA004D2BDC /* AXArticleCategoryFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXArticleCategoryFilterView.h; sourceTree = "<group>"; };
+		4C4456D92A18DF05004D2BDC /* ZCArticleCategoryFilterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCArticleCategoryFilterController.h; sourceTree = "<group>"; };
+		4C4456DA2A18DF05004D2BDC /* ZCArticleCategoryFilterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCArticleCategoryFilterController.m; sourceTree = "<group>"; };
 		4C5493882A170ED7005F7D66 /* AXChangeFlowCardAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXChangeFlowCardAlertView.h; sourceTree = "<group>"; };
 		4C5493892A170ED7005F7D66 /* AXChangeFlowCardAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXChangeFlowCardAlertView.m; sourceTree = "<group>"; };
 		4C54938B2A1730E4005F7D66 /* AXChangeFlowCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXChangeFlowCardCell.h; sourceTree = "<group>"; };
@@ -725,6 +728,8 @@
 				4C5493982A17AA18005F7D66 /* AXConsultationDetailController.m */,
 				4C18B35E2A185E7700C580AF /* AXPostAcrticleController.h */,
 				4C18B35F2A185E7700C580AF /* AXPostAcrticleController.m */,
+				4C4456D92A18DF05004D2BDC /* ZCArticleCategoryFilterController.h */,
+				4C4456DA2A18DF05004D2BDC /* ZCArticleCategoryFilterController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1110,6 +1115,7 @@
 				4CFFB0CC2A0261B600E3C814 /* CFFAlertView.m in Sources */,
 				4C18B3602A185E7700C580AF /* AXPostAcrticleController.m in Sources */,
 				4C1B8AC82A1375B70051491F /* AXMyTopView.m in Sources */,
+				4C4456DB2A18DF05004D2BDC /* ZCArticleCategoryFilterController.m in Sources */,
 				4C5493992A17AA18005F7D66 /* AXConsultationDetailController.m in Sources */,
 				4C1B8AD72A13928E0051491F /* AXAlertView.m in Sources */,
 				4CFFB06E2A020A8300E3C814 /* UIImage+Exta.m in Sources */,

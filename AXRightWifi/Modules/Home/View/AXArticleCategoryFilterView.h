@@ -8,6 +8,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) void (^clickLabelResule)(id value);
 
+@property (nonatomic, copy) void (^clickLabelIndexResule)(NSInteger index);
+
 /// 初始化
 - (instancetype)init;
 

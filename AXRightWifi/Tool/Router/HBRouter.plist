@@ -12,5 +12,7 @@
 	<string>AXConsultationDetailController</string>
 	<key>PostAcrticle</key>
 	<string>AXPostAcrticleController</string>
+	<key>ArticleCategoryFilter</key>
+	<string>ZCArticleCategoryFilterController</string>
 </dict>
 </plist>
