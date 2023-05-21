@@ -30,11 +30,11 @@
     [[ZCNetwork shareInstance] request_getWithApi:kGetCurrentOperatorFlowInfoURL params:@{} isNeedSVP:YES success:^(id  _Nullable responseObj) {
         completerHandler(responseObj);
     } failed:^(id  _Nullable data) {
-        if([data isKindOfClass:[NSDictionary class]]) {
-            [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(data[@"message"])];
-        } else {
-            [[CFFAlertView sharedInstance] showTextMsg:@"网络连接异常"];
-        }
+//        if([data isKindOfClass:[NSDictionary class]]) {
+//            [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(data[@"message"])];
+//        } else {
+//            [[CFFAlertView sharedInstance] showTextMsg:@"网络连接异常"];
+//        }
     }];
 }
 

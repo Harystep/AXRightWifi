@@ -54,6 +54,7 @@
     }];
     
     UIButton *changeBtn = [self createSimpleButtonWithTitle:@"切换卡片" font:12 color:rgba(245, 70, 58, 1)];
+    self.changeBtn = changeBtn;
     [bgView addSubview:changeBtn];
     [changeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.mas_equalTo(bgView.mas_trailing).inset(20);

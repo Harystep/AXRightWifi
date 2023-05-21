@@ -13,6 +13,7 @@
 
 @property (nonatomic,strong) ZCLoginFieldView *phoneView;
 @property (nonatomic,strong) ZCLoginFieldView *passwordView;
+@property (nonatomic,strong) UIButton *selBtn;
 
 @end
 
@@ -72,6 +73,46 @@
         make.height.mas_equalTo(38);
     }];
     [self setupRegisterAlertView:alertView];
+    
+    UIButton *selBtn = [[UIButton alloc] init];
+    [selBtn setImage:[UIImage imageNamed:@"protocol_agree_nor"] forState:UIControlStateNormal];
+    [selBtn setImage:[UIImage imageNamed:@"protocol_agree_sel"] forState:UIControlStateSelected];
+    [selBtn addTarget:self action:@selector(agreeProtocol:) forControlEvents:UIControlEventTouchUpInside];
+    self.selBtn = selBtn;
+    [self.view addSubview:selBtn];
+    [selBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.width.mas_equalTo(20);
+        make.leading.mas_equalTo(loginBtn.mas_leading);
+        make.top.mas_equalTo(loginBtn.mas_bottom).offset(5);
+    }];    
+    
+    UITextView *protocolView = [[UITextView alloc] init];
+    protocolView.textColor = UIColor.darkGrayColor;
+    NSString *protocolStr   = @"注册即表示您已详细阅读并同意《服务协议》与《隐私政策》";
+    NSString *linkString1 = @"《服务协议》";
+    NSRange linkRange1 = [protocolStr rangeOfString:linkString1];
+    NSString *linkString2 = @"《隐私政策》";
+    NSRange linkRange2 = [protocolStr rangeOfString:linkString2];
+    protocolView.textColor = COLOR_SUB_CONTENT;
+    protocolView.linkTextAttributes = @{};
+    NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:protocolStr];
+    [attributeString addAttributes:@{NSLinkAttributeName:k_User_PRIVACY_URL} range:linkRange1];
+    [attributeString addAttributes:@{NSFontAttributeName:FONT_SYSTEM(12), NSForegroundColorAttributeName:[ZCConfigColor redColor]} range:linkRange1];
+    
+    [attributeString addAttributes:@{NSLinkAttributeName:k_User_Agreement_URL} range:linkRange2];
+    [attributeString addAttributes:@{NSFontAttributeName:FONT_SYSTEM(12), NSForegroundColorAttributeName:[ZCConfigColor redColor]} range:linkRange2];
+    protocolView.attributedText = attributeString;    
+    [self.view addSubview:protocolView];
+    [protocolView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(selBtn.mas_trailing);
+        make.top.mas_equalTo(loginBtn.mas_bottom);
+        make.trailing.mas_equalTo(loginBtn.mas_trailing);
+        make.height.mas_equalTo(35);
+    }];
+}
+
+- (void)agreeProtocol:(UIButton *)sender {
+    sender.selected = !sender.selected;
 }
 
 - (void)setupRegisterAlertView:(UIView *)alertView {
@@ -100,6 +141,8 @@
         make.trailing.mas_equalTo(alertView.mas_trailing);
     }];
     [forgetBtn addTarget:self action:@selector(forgetOperate) forControlEvents:UIControlEventTouchUpInside];
+    
+    
     
 }
 #pragma mark - 忘记密码

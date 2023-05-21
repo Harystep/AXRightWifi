@@ -8,6 +8,10 @@
 #import "ZCHomeController.h"
 #import "AXHomeItemView.h"
 #import "AXHomeSearchView.h"
+#import "AXFlowFloatView.h"
+#import "AXChangeCardView.h"
+#import "AXChangeFlowCardAlertView.h"
+#import "AXChangeFlowDeviceAlertView.h"
 
 #define kTopHeight (129-44)
 
@@ -16,15 +20,22 @@
 @property (nonatomic, strong) JXCategoryTitleView *categoryView;
 @property (nonatomic, strong) UIScrollView        *scrollView;
 @property (nonatomic, assign) NSInteger pageIndex;
-@property (nonatomic,strong) NSArray *dataArr;
+@property (nonatomic,strong) NSArray *configureArr;
 @property (nonatomic,strong) UIButton *filterBtn;
 @property (nonatomic,strong) AXHomeSearchView *searchView;
 @property (nonatomic,strong) NSMutableArray *keyArr;
+
+@property (nonatomic,strong) AXFlowFloatView *floatView;
+@property (nonatomic,assign) int signHasCardFlag;
 
 @end
 
 @implementation ZCHomeController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self getUserBindCardYiListInfo];    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +45,8 @@
     [self configureNavi];
     
     [self queryHomeTitleListInfo];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeFlowStatus:) name:@"kFlowCardShowKey" object:nil];
 }
 
 - (void)configureNavi {
@@ -72,15 +85,15 @@
 - (void)searchOperate:(NSString *)content {
     [self.view endEditing:YES];
     [self.keyArr replaceObjectAtIndex:self.pageIndex withObject:checkSafeContent(content)];
-    NSDictionary *dic = self.dataArr[self.pageIndex];
+    NSDictionary *dic = self.configureArr[self.pageIndex];
     [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"kProductCategoryIndex%tu", self.pageIndex] object:@{@"id":checkSafeContent(dic[@"id"]), @"content":checkSafeContent(content)}];
 }
 
 #pragma mark - 发布文章
 - (void)postOperate {
     kweakself(self);
-    [HCRouter router:@"PostAcrticle" params:@{@"data":checkSafeArray(self.dataArr)} viewController:self animated:YES block:^(id  _Nonnull value) {
-        NSDictionary *dic = weakself.dataArr[weakself.pageIndex];
+    [HCRouter router:@"PostAcrticle" params:@{@"data":checkSafeArray(self.configureArr)} viewController:self animated:YES block:^(id  _Nonnull value) {
+        NSDictionary *dic = weakself.configureArr[weakself.pageIndex];
         weakself.searchView.contentF.text = weakself.keyArr[weakself.pageIndex];
         [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"kProductCategoryIndex%tu", self.pageIndex] object:@{@"id":checkSafeContent(dic[@"id"]), @"content":checkSafeContent(weakself.keyArr[self.pageIndex])}];
     }];
@@ -88,7 +101,7 @@
 
 - (void)showFilterContentView {
     kweakself(self);
-    [HCRouter router:@"ArticleCategoryFilter" params:@{@"data":checkSafeArray(self.dataArr)} viewController:self block:^(id  _Nonnull value) {
+    [HCRouter router:@"ArticleCategoryFilter" params:@{@"data":checkSafeArray(self.configureArr)} viewController:self block:^(id  _Nonnull value) {
         [weakself.categoryView selectItemAtIndex:[value integerValue]];
     }];
 }
@@ -96,7 +109,7 @@
 - (void)queryHomeTitleListInfo {
     [ZCHomeManage queryHomeCategoryListInfo:@{} completeHandler:^(id  _Nonnull responseObj) {
         NSLog(@"%@", responseObj);
-        self.dataArr = responseObj[@"data"][@"cates"];
+        self.configureArr = responseObj[@"data"][@"cates"];
         [self configureSubviews];
     }];
 }
@@ -121,7 +134,7 @@
         classView.index = idx;
         [self.scrollView addSubview:classView];
         if (idx == 0) {
-            NSDictionary *dic = self.dataArr[idx];
+            NSDictionary *dic = self.configureArr[idx];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"kProductCategoryIndex0" object:@{@"id":checkSafeContent(dic[@"id"])}];
         }
     }];
@@ -136,7 +149,7 @@
     }
     CGFloat widthMax = SCREEN_W - 50;
     CGFloat widthItem = 60;
-    CGFloat width = self.dataArr.count*widthItem > widthMax?widthMax:self.dataArr.count*widthItem;
+    CGFloat width = self.configureArr.count*widthItem > widthMax?widthMax:self.configureArr.count*widthItem;
     self.categoryView = [[JXCategoryTitleView alloc]
                          initWithFrame:CGRectMake(0, kTopHeight, width, 44)];
     
@@ -149,8 +162,8 @@
     self.categoryView.defaultSelectedIndex = 0;
     self.categoryView.titleLabelAnchorPointStyle = JXCategoryTitleLabelAnchorPointStyleBottom;
     NSMutableArray *itemArr = [NSMutableArray array];
-    for (int i = 0; i < self.dataArr.count; i ++) {
-        NSDictionary *dic = self.dataArr[i];
+    for (int i = 0; i < self.configureArr.count; i ++) {
+        NSDictionary *dic = self.configureArr[i];
         [itemArr addObject:dic[@"title"]];
     }
     self.categoryView.titles = itemArr;
@@ -202,10 +215,91 @@
 - (void)categoryView:(JXCategoryBaseView *)categoryView didSelectedItemAtIndex:(NSInteger)index {
     NSLog(@"index:%tu", index);
     self.pageIndex = index;
-    NSDictionary *dic = self.dataArr[index];
+    NSDictionary *dic = self.configureArr[index];
     self.searchView.contentF.text = self.keyArr[index];
     [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"kProductCategoryIndex%tu", index] object:@{@"id":checkSafeContent(dic[@"id"]), @"content":checkSafeContent(self.keyArr[index])}];
 }
+
+- (void)routerWithEventName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {
+    if([eventName isEqualToString:@"change"]) {//切换卡片
+        if(self.signHasCardFlag) {
+            AXChangeCardView *alertView = [[AXChangeCardView alloc] init];
+            [alertView showContentView];
+            kweakself(self);
+            alertView.bindDeviceOperate = ^{//切换卡片
+                [weakself changeCardView];
+            };
+            alertView.knowDeviceInfoOperate = ^{//切换设备
+                [weakself changeDeviceView];
+            };
+        } else {
+            [HCRouter router:@"AddCardDevice" params:@{} viewController:self animated:YES block:^(id  _Nonnull value) {
+                [self getUserBindCardYiListInfo];
+            }];
+        }
+    }
+}
+
+- (void)changeFlowStatus:(NSNotification *)noti {
+    NSInteger status = [noti.object integerValue];
+    if(status) {
+        self.signHasCardFlag = YES;
+    } else {
+        self.signHasCardFlag = NO;
+    }
+    self.floatView = [[AXFlowFloatView alloc] init];
+    [self.view addSubview:self.floatView];
+    [self.floatView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.mas_equalTo(self.view);
+        make.width.mas_equalTo(107);
+        make.height.mas_equalTo(40);
+        make.top.mas_equalTo(self.view.mas_top).offset(162);
+    }];
+    self.floatView.type = status;
+}
+
+- (void)changeDeviceView {
+    AXChangeFlowDeviceAlertView *alertView = [[AXChangeFlowDeviceAlertView alloc] init];
+    [alertView showContentView];
+    alertView.dataArr = self.deviceArr;
+    kweakself(self);
+    alertView.knowDeviceInfoOperate = ^(NSDictionary * _Nonnull dic) {
+        [weakself changeDeviceOperator:dic];
+    };
+    alertView.bindDeviceOperate = ^{//添加设备
+        [weakself jumpAddCardOp];
+    };
+}
+
+- (void)changeCardView {
+    AXChangeFlowCardAlertView *alertView = [[AXChangeFlowCardAlertView alloc] init];
+    [alertView showContentView];
+    alertView.dataArr = self.dataArr;
+    kweakself(self);
+    alertView.knowDeviceInfoOperate = ^(NSDictionary * _Nonnull dic) {
+        [weakself changeDeviceOperator:dic];
+    };
+    alertView.bindDeviceOperate = ^{//添加流量卡
+        [weakself jumpAddCardOp];
+    };
+}
+
+- (void)jumpAddCardOp {
+    [HCRouter router:@"AddCardDevice" params:@{} viewController:self animated:YES block:^(id  _Nonnull value) {
+        [self getUserBindCardYiListInfo];
+        [self getUserBindDeviceListInfo];
+    }];
+}
+
+- (void)changeDeviceOperator:(NSDictionary *)dataDic {
+    NSString *master_service_type = checkSafeContent(dataDic[@"master_service_type"]);
+    NSString *sim_card_type = checkSafeContent(dataDic[@"sim_card_type"]);
+    NSString *iccid = checkSafeContent(dataDic[@"iccid"]);
+    [ZCMineManage changeDeviceOperatorURL:@{@"master_service_type":master_service_type, @"sim_card_type":sim_card_type, @"iccid":iccid} completeHandler:^(id  _Nonnull responseObj) {
+        [[CFFAlertView sharedInstance] showTextMsg:checkSafeContent(responseObj[@"message"])];       
+    }];
+}
+
 
 - (void)configureSubviews {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -214,7 +308,5 @@
         [self setupSubviews];
     });
 }
-
-
 
 @end

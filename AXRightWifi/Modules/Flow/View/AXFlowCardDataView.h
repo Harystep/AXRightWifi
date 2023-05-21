@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSDictionary *operatorDic;
 
+@property (nonatomic,strong) UIButton *changeBtn;
+
 @end
 
 NS_ASSUME_NONNULL_END

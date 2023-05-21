@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.mouse = 60;
     [self configureNavi];
     
     [self createSubviews];

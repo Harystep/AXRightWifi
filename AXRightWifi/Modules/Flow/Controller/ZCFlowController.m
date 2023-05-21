@@ -26,9 +26,11 @@
 
 @property (nonatomic,strong) AXFlowDonwHeadView *downHeadView;
 
-@property (nonatomic,strong) NSMutableArray *dataArr;
+//@property (nonatomic,strong) NSMutableArray *dataArr;
 
-@property (nonatomic,strong) NSArray *deviceArr;
+//@property (nonatomic,strong) NSArray *deviceArr;
+
+@property (nonatomic,assign) BOOL signHasCardFlag;
 
 @end
 
@@ -36,10 +38,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self getUserBindCardYiListInfo];
-    [self getUserBindDeviceListInfo];
+    [self getUserBindCardYiListInfo];    
 }
-
+//
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -59,10 +60,22 @@
     [self getDownListInfo];
         
     [self getCurrentOperatorInfo];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeFlowStatus:) name:@"kFlowCardShowKey" object:nil];
+}
+
+- (void)changeFlowStatus:(NSNotification *)noti {
+    NSInteger status = [noti.object integerValue];
+    if (status) {
+        self.signNoneView = YES;
+        [self.dataView.changeBtn setTitle:@"切换卡号" forState:UIControlStateNormal];
+    } else {
+        [self.dataView.changeBtn setTitle:@"绑定卡号" forState:UIControlStateNormal];
+        self.signNoneView = NO;
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    NSInteger count = (self.rewardArr.count>0?1:0)+(self.downArr.count>0?1:0);
     return 2;
 }
 
@@ -163,43 +176,9 @@
     }];
 }
 
-/// 获取卡
-- (void)getUserBindCardYiListInfo {
-    self.dataArr = [NSMutableArray array];
-    [ZCMineManage getUserBindInfoURL:@{@"sim_card_type":@"1", @"master_service_type":@"1"} completeHandler:^(id  _Nonnull responseObj) {
-//        NSLog(@"yidong:%@", responseObj);
-        [self.dataArr addObject:checkSafeArray(responseObj[@"data"])];
-        [self getUserBindCardUnionListInfo];
-    }];
-}
-/// 获取联通的卡
-- (void)getUserBindCardUnionListInfo {
-    [ZCMineManage getUserBindInfoURL:@{@"sim_card_type":@"1", @"master_service_type":@"2"} completeHandler:^(id  _Nonnull responseObj) {
-//        NSLog(@"union:%@", responseObj);
-        [self.dataArr addObject:checkSafeArray(responseObj[@"data"])];
-        [self getUserBindCardDianListInfo];
-    }];
-}
-/// 获取电信的卡
-- (void)getUserBindCardDianListInfo {
-    [ZCMineManage getUserBindInfoURL:@{@"sim_card_type":@"1", @"master_service_type":@"3"} completeHandler:^(id  _Nonnull responseObj) {
-//        NSLog(@"dianxin:%@", responseObj);
-        [self.dataArr addObject:checkSafeArray(responseObj[@"data"])];
-    }];
-}
-
-/// 获取设备
-- (void)getUserBindDeviceListInfo {
-    [ZCMineManage getUserBindInfoURL:@{@"sim_card_type":@"2"} completeHandler:^(id  _Nonnull responseObj) {
-//        NSLog(@"device:%@", responseObj);
-        self.deviceArr = checkSafeArray(responseObj[@"data"]);
-    }];
-}
-
 - (void)getCurrentOperatorInfo {
     [ZCFlowManage getCurrentOperatorFlowInfoURL:@{} completeHandler:^(id  _Nonnull responseObj) {
         NSArray *dataArr = checkSafeArray(responseObj[@"data"]);
-//        NSLog(@"%@", dataArr);
         for (NSDictionary *itemDic in dataArr) {
             if([itemDic[@"is_default"] integerValue] == 1) {
                 NSDictionary *fisrtDic = itemDic;
@@ -214,15 +193,21 @@
 
 - (void)routerWithEventName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {
     if([eventName isEqualToString:@"change"]) {//切换卡片
-        AXChangeCardView *alertView = [[AXChangeCardView alloc] init];        
-        [alertView showContentView];
-        kweakself(self);
-        alertView.bindDeviceOperate = ^{//切换卡片
-            [weakself changeCardView];
-        };
-        alertView.knowDeviceInfoOperate = ^{//切换设备
-            [weakself changeDeviceView];
-        };
+        if(self.signHasCardFlag) {
+            AXChangeCardView *alertView = [[AXChangeCardView alloc] init];
+            [alertView showContentView];
+            kweakself(self);
+            alertView.bindDeviceOperate = ^{//切换卡片
+                [weakself changeCardView];
+            };
+            alertView.knowDeviceInfoOperate = ^{//切换设备
+                [weakself changeDeviceView];
+            };
+        } else {
+            [HCRouter router:@"AddCardDevice" params:@{} viewController:self animated:YES block:^(id  _Nonnull value) {
+                [self getUserBindCardYiListInfo];
+            }];
+        }
     }
 }
 
@@ -255,7 +240,6 @@
 - (void)jumpAddCardOp {
     [HCRouter router:@"AddCardDevice" params:@{} viewController:self animated:YES block:^(id  _Nonnull value) {
         [self getUserBindCardYiListInfo];
-        [self getUserBindDeviceListInfo];
     }];
 }
 

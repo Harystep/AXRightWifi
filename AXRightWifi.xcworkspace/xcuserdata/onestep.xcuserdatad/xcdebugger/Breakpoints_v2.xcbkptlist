@@ -19,49 +19,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "08DE3D16-6050-406A-AE6D-A91CDE23045E"
+            uuid = "63CCC480-4041-4BD3-95F6-E525BB729B5C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AXRightWifi/Modules/Flow/View/AXChangeFlowCardAlertView.m"
+            filePath = "AXRightWifi/Network/ZCFlowManage.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "-maskBtnClick"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "+getFlowRewardListInfoURL:completeHandler:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "08DE3D16-6050-406A-AE6D-A91CDE23045E - 4d8291d47bbaa9ed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AXChangeFlowCardAlertView maskBtnClick]"
-                  moduleName = "&#x53f3;&#x91cf;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/onestep/Desktop/AXRightWifi/AXRightWifi/Modules/Flow/View/AXChangeFlowCardAlertView.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "206"
-                  endingLineNumber = "206"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  uuid = "08DE3D16-6050-406A-AE6D-A91CDE23045E - 4d8291d47bbaa9b3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AXChangeFlowCardAlertView maskBtnClick]"
-                  moduleName = "&#x53f3;&#x91cf;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/onestep/Desktop/AXRightWifi/AXRightWifi/Modules/Flow/View/AXChangeFlowCardAlertView.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "204"
-                  endingLineNumber = "204"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CF66C8C-6023-4773-B6FF-59FCFA59ED3C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AXRightWifi/Network/ZCFlowManage.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "+getFlowDownListInfoURL:completeHandler:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

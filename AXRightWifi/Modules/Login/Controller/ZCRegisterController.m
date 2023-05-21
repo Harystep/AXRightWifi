@@ -9,7 +9,7 @@
 #import "ZCLoginFieldView.h"
 #import "ZCTabBarController.h"
 
-@interface ZCRegisterController ()<UITextViewDelegate>
+@interface ZCRegisterController ()
 
 @property (nonatomic,strong) UIScrollView *scView;
 
@@ -163,8 +163,7 @@
         make.height.width.mas_equalTo(20);
         make.leading.mas_equalTo(registerBtn.mas_leading);
         make.top.mas_equalTo(registerBtn.mas_bottom).offset(5);
-    }];
-    [selBtn addTarget:self action:@selector(agreeProtocol:) forControlEvents:UIControlEventTouchUpInside];
+    }];    
     
     UITextView *protocolView = [[UITextView alloc] init];
     protocolView.textColor = UIColor.darkGrayColor;
@@ -182,7 +181,6 @@
     [attributeString addAttributes:@{NSLinkAttributeName:k_User_Agreement_URL} range:linkRange2];
     [attributeString addAttributes:@{NSFontAttributeName:FONT_SYSTEM(12), NSForegroundColorAttributeName:[ZCConfigColor redColor]} range:linkRange2];
     protocolView.attributedText = attributeString;
-    protocolView.delegate = self;
     [self.contentView addSubview:protocolView];
     [protocolView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(selBtn.mas_trailing);
@@ -290,6 +288,34 @@
     NSString *phone = self.phoneView.contentF.text;
     NSString *code = self.codeView.contentF.text;
     NSString *invite = self.inviteView.contentF.text;
+    if(account.length == 0) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"请输入账号"];
+        return;
+    }
+    if(pwd.length == 0) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"请输入密码"];
+        return;
+    }
+    if(surePwd.length == 0) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"请输入确认密码"];
+        return;
+    }
+    if([surePwd isEqualToString:pwd]) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"密码输入不一致"];
+        return;
+    }
+    if(phone.length == 0) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"请填写手机号"];
+        return;
+    }
+    if(code.length == 0) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"请输入验证码"];
+        return;
+    }
+    if(self.selBtn.selected == NO) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"请勾选用户协议"];
+        return;
+    }
     NSMutableDictionary *dictM = [NSMutableDictionary dictionaryWithDictionary:@{@"mobile":checkSafeContent(phone),
                                                                                  @"username":checkSafeContent(account),
                                                                                  @"password":checkSafeContent(pwd),
