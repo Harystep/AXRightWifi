@@ -188,6 +188,26 @@
     NSString *surePwd = self.surePwdView.contentF.text;
     NSString *phone = self.phoneView.contentF.text;
     NSString *code = self.codeView.contentF.text;
+    if(pwd.length == 0) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"请输入密码"];
+        return;
+    }
+    if(surePwd.length == 0) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"请输入确认密码"];
+        return;
+    }
+    if([surePwd isEqualToString:pwd]) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"密码输入不一致"];
+        return;
+    }
+    if(phone.length == 0) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"请填写手机号"];
+        return;
+    }
+    if(code.length == 0) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"请输入验证码"];
+        return;
+    }
     NSMutableDictionary *dictM = [NSMutableDictionary dictionaryWithDictionary:@{@"mobile":checkSafeContent(phone),
                                                                                  @"password":checkSafeContent(pwd),
                                                                                  @"password_repetition":checkSafeContent(surePwd),

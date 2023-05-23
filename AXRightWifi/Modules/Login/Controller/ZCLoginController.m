@@ -81,10 +81,11 @@
     self.selBtn = selBtn;
     [self.view addSubview:selBtn];
     [selBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.width.mas_equalTo(20);
+        make.height.width.mas_equalTo(15);
         make.leading.mas_equalTo(loginBtn.mas_leading);
-        make.top.mas_equalTo(loginBtn.mas_bottom).offset(5);
-    }];    
+        make.top.mas_equalTo(loginBtn.mas_bottom).offset(10);
+    }];
+    self.selBtn.selected = YES;
     
     UITextView *protocolView = [[UITextView alloc] init];
     protocolView.textColor = UIColor.darkGrayColor;
@@ -158,6 +159,14 @@
 - (void)loginOperate {
     NSString *phone = self.phoneView.contentF.text;
     NSString *pwd = self.passwordView.contentF.text;
+    if(phone.length == 0) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"请输入账号"];
+        return;
+    }
+    if(pwd.length < 6) {
+        [[CFFAlertView sharedInstance] showTextMsg:@"密码输入有误"];
+        return;
+    }
     NSDictionary *parms = @{@"username":checkSafeContent(phone),
                             @"password":pwd,
                             @"group":@"ios"
